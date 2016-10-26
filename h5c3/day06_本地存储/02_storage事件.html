@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02_storage事件</title>
+	<style>
+		textarea{display: block;width:600px;min-height: 60px;}
+	</style>
+	<script>
+	document.addEventListener('DOMContentLoaded',function(){
+		var btnSave = document.querySelector('.btnSave');
+		var msg = document.querySelector('#msg');
+		var res = document.querySelector('.res');
+
+		var datalist = localStorage.getItem('datalist');//这里得到的有可能为null
+		datalist = datalist ? JSON.parse(datalist) : [];
+
+		// 点击保存按钮事件
+		btnSave.onclick = function(){
+			datalist.push(msg.value);
+
+			// 存入本地存储
+			localStorage.setItem('datalist',JSON.stringify(datalist));
+		}
+
+		window.onstorage = function(e){
+			console.log(e);
+		}
+	})
+	
+	</script>
+</head>
+<body>
+	<textarea id="msg"></textarea>
+	<button class="btnSave">保存</button>
+	<div class="res"></div>
+</body>
+</html>

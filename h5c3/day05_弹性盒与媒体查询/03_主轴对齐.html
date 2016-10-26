@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>03_主轴对齐</title>
+	<link rel="stylesheet" href="font/iconfont.css">
+	<style>
+		.box{display:flex;
+			margin:10px 0;padding:5px;border:5px solid #ddd;
+		}
+		.box span{box-sizing:border-box;background-color:#ddd;text-align:center;}
+		.box span:nth-child(2){background-color: #fc0;}
+
+		.box1 span:nth-child(1){margin-right:10px;width:200px;}
+		.box1 span:nth-child(2){flex:2;}
+		.box1 span:nth-child(3){flex:1;}
+
+		.box2{height:200px;
+			/*主轴对齐方式*/
+			justify-content:flex-end;
+
+			/*交叉轴对齐方式*/
+			align-items:flex-end;
+		}
+		.box2 span:nth-child(1){width:200px;margin-right:10px;height:120px;}
+		.box2 span:nth-child(2){width:100px;height:100px;align-self:center;}
+		.box2 span:nth-child(3){width:100px;height:80px;}
+
+		/*
+			写在项目上的属性
+				order:排序;
+				flex-grow：分配剩余空间
+				flex-shrink：分配压缩比例
+				flex-basis：预先分配大小
+		 */
+		.box3 span:nth-child(1){width:100px;/* order:3;flex-grow:1; */}
+		.box3 span:nth-child(2){width:300px;/* order:2;flex-grow:2; */}
+		.box3 span:nth-child(3){width:300px;/* order:0; */flex-shrink:2;}
+	</style>
+</head>
+<body>
+	<div class="box box1">
+		<span>项目1</span>
+		<span>项目2</span>
+		<span>项目3</span>
+	</div>
+	<div class="box box2">
+		<span>项目1</span>
+		<span>项目2</span>
+		<span>项目3</span>
+	</div>
+
+	<div class="box box3">
+		<span>项目1</span>
+		<span>项目2</span>
+		<span>项目3</span>
+	</div>
+</body>
+</html>

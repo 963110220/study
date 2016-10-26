@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>12_canvas时钟</title>
+	<script>
+		/*
+			canvas时钟
+				1)画表盘
+				2)刻度
+				3)时针/分针/秒针
+				4)其他信息
+				5)时钟走动效果
+		 */
+		document.addEventListener('DOMContentLoaded',function(){
+			var canvas = document.querySelector('canvas');
+			canvas.width = canvas.height = 600;
+
+			var ctx = canvas.getContext('2d');
+			ctx.strokeStyle = '#f00';
+
+			// 中心
+			var center = {x:canvas.width/2,y:canvas.height/2};
+			draw();
+			
+			function draw(){
+				ctx.save();
+
+				ctx.clearRect(0,0,canvas.width,canvas.height);
+
+
+				// 先把原点移动到中点位置
+				ctx.translate(center.x,center.y);
+
+				
+				// 1)画外表盘
+				ctx.save();
+				ctx.beginPath();
+				ctx.arc(0,0,120,0,2*Math.PI);
+				ctx.lineWidth = 3;
+				ctx.stroke();
+				ctx.restore();
+
+				// 画内表盘
+				ctx.save();
+				ctx.beginPath();
+				ctx.arc(0,0,114,0,2*Math.PI);
+				ctx.stroke();
+				ctx.restore()
+
+
+				// 2)刻度
+				// 把原点移动到12点刻度位置
+				ctx.save();
+				ctx.beginPath();
+
+				ctx.moveTo(0,-114);
+				ctx.lineTo(0,-106);
+
+				// 画12，3，6，9时钟刻度
+				for(var i=0;i<3;i++){
+					ctx.rotate(Math.PI/2);
+					ctx.moveTo(0,-114);
+					ctx.lineTo(0,-106);
+				}
+
+				ctx.lineWidth = 6;
+				ctx.stroke();
+				ctx.restore();
+
+
+				// 画1，2，4，5，7，8，10，11时钟刻度
+				ctx.save();
+				ctx.beginPath();
+				ctx.lineWidth = 3;
+				for(var i=0;i<12;i++){
+					// if(i==0||i==3||i==6||i==9) continue;
+					ctx.rotate(30*Math.PI/180);
+					ctx.moveTo(0,-114);
+					ctx.lineTo(0,-108);
+				}
+				ctx.stroke();
+
+				// 画秒针刻度
+				ctx.beginPath();
+				ctx.lineWidth = 1;
+				for(var i=0;i<60;i++){
+					// if(i==0||i==3||i==6||i==9) continue;
+					ctx.rotate(6*Math.PI/180);
+					ctx.moveTo(0,-114);
+					ctx.lineTo(0,-108);
+				}
+				ctx.stroke();
+				ctx.restore();
+
+
+				// 画时针/分针/秒针
+				var date = new Date();
+				var hour = date.getHours();
+				var min = date.getMinutes();
+				var sec = date.getSeconds();
+				var day = date.getDay();
+				var tody = date.getDate();
+//				console.log(day,tody);
+				
+				ctx.save();
+				ctx.rotate((hour+min/60+sec/3600)*360/12*Math.PI/180);
+				ctx.beginPath();
+				ctx.moveTo(0,0);
+				ctx.lineTo(0,-60);
+				ctx.lineWidth = 5;
+				ctx.stroke();
+				ctx.restore();
+
+				ctx.save();
+				ctx.rotate((min+sec/60)*360/60*Math.PI/180);
+				ctx.beginPath();
+				ctx.moveTo(0,0);
+				ctx.lineTo(0,-70);
+				ctx.lineWidth = 3;
+				ctx.stroke();
+				ctx.restore();
+
+				ctx.save();
+				ctx.rotate(sec*360/60*Math.PI/180);
+				ctx.beginPath();
+				ctx.moveTo(0,0);
+				ctx.lineTo(0,-90);
+				ctx.lineWidth = 1;
+				ctx.stroke();
+				ctx.restore();
+
+				ctx.restore();
+			}
+			
+			// 时钟走动
+			setInterval(function(){
+				draw();
+			},1000);
+
+			var btnSave = document.querySelector('button');
+			var res = document.querySelector('.res');
+			btnSave.onclick = function(){
+				var data = canvas.toDataURL('image/png', 0.8);//base64
+
+				var img = new Image();
+				img.src = data;
+
+				img.onload = function(){
+					console.log(data);
+					res.appendChild(img);
+				}
+			}
+		});
+	</script>
+</head>
+<body>
+	<canvas>你的浏览器不支持canvas标签，请升级你的浏览你</canvas>
+	<button>保存</button>
+	<div class="res"></div>
+</body>
+</html>

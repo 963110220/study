@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01_sessionStorage</title>
+	<script>
+	document.addEventListener('DOMContentLoaded',function(){
+		var btnSave = document.querySelector('.btnSave');
+		var btnGet = document.querySelector('.btnGet');
+		var eName = document.querySelector('#name');
+		var eRes = document.querySelector('.res');
+
+		btnSave.onclick = function(){
+			// 写入
+			sessionStorage.setItem('name',eName.value);
+		}
+		
+
+		btnGet.onclick = function(){
+			// 读取
+			eRes.innerHTML = sessionStorage.getItem('name');
+		}
+		
+	})
+	
+	</script>
+</head>
+<body>
+	<input type="text" id="name">
+	<button class="btnSave">保存</button>
+	<button class="btnGet">读取</button>
+	<div class="res"></div>
+</body>
+</html>

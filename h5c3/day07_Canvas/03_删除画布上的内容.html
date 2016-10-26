@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03_删除画布上的内容</title>
+	<style>
+		canvas{border:1px solid #ddd;}
+	</style>
+	<script>
+		document.addEventListener('DOMContentLoaded',function(){
+			var canvas = document.querySelector('canvas');
+			canvas.width = 600;
+			canvas.height = 600;
+
+			var ctx = canvas.getContext('2d');
+
+			ctx.fillStyle = '#fc0';
+			ctx.fillRect(20,20,100,200);
+
+			// 清空画布
+			var btnClear = document.querySelector('#btnClear');
+			btnClear.onclick = function(){
+				// 清空指定区域画布
+				// ctx.clearRect(0,0,100,100);
+
+				// 清空画布
+				ctx.clearRect(0,0,canvas.width,canvas.height);
+			}
+		})
+	</script>
+</head>
+<body>
+	<canvas>你的浏览器不支持canvas标签，请升级你的浏览你</canvas>
+	<button id="btnClear">清空画布</button>
+</body>
+</html>

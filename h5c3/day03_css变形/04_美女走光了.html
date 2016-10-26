@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04_美女走光了</title>
+	<style>
+		ul{list-style: none;padding:0;margin:0;}
+		section ul{position:relative;width:320px;height:320px;overflow: hidden;border:5px solid #ddd;background:url(img/mmzg.png) no-repeat center/contain;}
+		section ul li{position:absolute;top:0;left:-320px;transition:all 1s;opacity:0;}
+		section ul li:target{left:0;opacity:1;}
+
+		nav{padding:10px 0;}
+		nav a{display:inline-block;padding:3px 5px;border-radius: 2px;transition: all .5s;color:#333;}
+		nav a:hover{background-color: #fc0;}
+	</style>
+</head>
+<body>
+	<section>
+		<h1>美女都走光了，亮出代码，赶紧找回来</h1>
+		<ul>
+			<li id="mm1"><img src="img/mm001.jpg" alt=""></li>
+			<li id="mm2"><img src="img/mm002.jpg" alt=""></li>
+			<li id="mm3"><img src="img/mm003.jpg" alt=""></li>
+			<li id="mm4"><img src="img/mm004.jpg" alt=""></li>
+			<li id="mm5"><img src="img/mm005.jpg" alt=""></li>
+		</ul>
+		<nav>
+			<a href="#mm1">寻找美女1</a>
+			<a href="#mm2">寻找美女2</a>
+			<a href="#mm3">寻找美女3</a>
+			<a href="#mm4">寻找美女4</a>
+			<a href="#mm5">寻找美女5</a>
+		</nav>
+	</section>
+</body>
+</html>

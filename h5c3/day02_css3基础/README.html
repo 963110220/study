@@ -1,0 +1,1467 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headeranchor-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .headeranchor-link:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .headeranchor,
+.markdown-body h2 .headeranchor,
+.markdown-body h3 .headeranchor,
+.markdown-body h4 .headeranchor,
+.markdown-body h5 .headeranchor,
+.markdown-body h6 .headeranchor {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .headeranchor-link,
+.markdown-body h2:hover .headeranchor-link,
+.markdown-body h3:hover .headeranchor-link,
+.markdown-body h4:hover .headeranchor-link,
+.markdown-body h5:hover .headeranchor-link,
+.markdown-body h6:hover .headeranchor-link {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .headeranchor-link .headeranchor,
+.markdown-body h2:hover .headeranchor-link .headeranchor,
+.markdown-body h3:hover .headeranchor-link .headeranchor,
+.markdown-body h4:hover .headeranchor-link .headeranchor,
+.markdown-body h5:hover .headeranchor-link .headeranchor,
+.markdown-body h6:hover .headeranchor-link .headeranchor {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* Multimarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><title>README</title></head><body><article class="markdown-body"><div class="toc">
+<ul>
+<li><a href="#css3">CSS3基础</a><ul>
+<li><a href="#css3_1">CSS3 选择器</a><ul>
+<li><a href="#1-css2">1. 回顾CSS2中的选择器</a></li>
+<li><a href="#2-css3">2. CSS3新增选择器</a></li>
+<li><a href="#3">3. 伪类选择器</a></li>
+<li><a href="#4">4. 伪元素选择器</a></li>
+</ul>
+</li>
+<li><a href="#_1">字体及字体样式</a><ul>
+<li><a href="#1">1. 颜色</a></li>
+<li><a href="#2-font-face">2. 服务器字体@font-face</a></li>
+<li><a href="#3_1">3. 文本样式</a></li>
+</ul>
+</li>
+<li><a href="#_2">其他新增样式</a><ul>
+<li><a href="#1_1">1. 背景</a></li>
+<li><a href="#2">2. 边框</a></li>
+<li><a href="#3_2">3. 渐变</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="css3"><a name="user-content-css3" href="#css3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>CSS3基础</h1>
+<blockquote>
+<p>CSS3是CSS技术的升级版本，CSS3语言开发是朝着模块化发展的，是最新的 CSS 标准。<br />
+CSS3 完全向后兼容，因此您不必改变现有的设计。浏览器通常支持 CSS2。</p>
+</blockquote>
+<h3 id="css3_1"><a name="user-content-css3_1" href="#css3_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>CSS3 选择器</h3>
+<blockquote>
+<p>选择器是css3中的一个重要内容。使用它可以大幅度提高开发人员书写或修改样式表时的工作效率</p>
+</blockquote>
+<h4 id="1-css2"><a name="user-content-1-css2" href="#1-css2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1. 回顾CSS2中的选择器</h4>
+<ul>
+<li>标签选择器，id选择器，类选择器，通用选择器</li>
+<li>后代选择器，子选择器，群组选择器</li>
+</ul>
+<h4 id="2-css3"><a name="user-content-2-css3" href="#2-css3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2. CSS3新增选择器</h4>
+<ul>
+<li>属性选择器<ul>
+<li>[属性名]<br />
+示例: [data-index]{&hellip;} 匹配包含data-index属性的所有元素;</li>
+<li>[属性名=属性值]<br />
+示例: [data-index=&rdquo;110&rdquo;]{&hellip;} 匹配data-index属性等于10的元素;</li>
+<li>[属性名^=字符]<br />
+示例: [data-index^=&rdquo;10&rdquo;]{&hellip;} 匹配data-index属性以10开头的元素;</li>
+<li>[属性名$=字符]<br />
+示例: [data-index$=&rdquo;10&rdquo;]{&hellip;} 匹配data-index属性以10结尾的元素;</li>
+<li>[属性名*=字符]<br />
+示例: [data-index*=&rdquo;10&rdquo;]{&hellip;} 匹配data-index属性包含10的元素;</li>
+</ul>
+</li>
+<li>+: 相邻兄弟选择器<br />
+    相邻兄弟选择器可以选择紧接在另一元素后的元素，而且他们具有一个相同的父元素，E F两元素具有一个相同的父元素，而且Ｆ元素在Ｅ元素后面，而且相邻<br />
+    <pre><code>div+p{color: red;}
+&lt;div&gt;hello1&lt;/div&gt;
+&lt;p&gt;world&lt;/p&gt;
+&lt;p&gt;world2&lt;/p&gt;
+</code></pre></li>
+<li>~: 通用兄弟选择器<br />
+    <pre><code>div~p{color: red;}
+&lt;div&gt;hello1&lt;/div&gt;
+&lt;p&gt;world&lt;/p&gt;
+&lt;p&gt;world2&lt;/p&gt;
+</code></pre></li>
+</ul>
+<h4 id="3"><a name="user-content-3" href="#3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3. 伪类选择器</h4>
+<blockquote>
+<p>css 伪类用于向某些选择器添加特殊的效果。css伪元素用于将特殊的效果添加到某些选择器。<br />
+是在css中已经定义好的选择器，不能随便修改</p>
+</blockquote>
+<ul>
+<li>
+<p>CSS2中的伪类<br />
+:link,:visited,:hover,:active(注意顺序)</p>
+</li>
+<li>
+<p>结构性伪类选择器：可以基于元素在标记中的位置进行定位</p>
+<ul>
+<li>:root、<br />
+匹配E元素在文档的根元素。在HTML中，根元素永远是HTML </li>
+<li>:not (n)、<br />
+如果相对某个结构元素使用样式，但是想排除这个结构元素下面的子结构元素，让它不使用整个样式时，可以使用not选择器</li>
+<li>:empty、<br />
+使用该选择器来制定当元素内容为空白时使用的样式</li>
+<li>:target<br />
+使用该选择器来对页面中的某个target元素（该元素的id当做页面中的超链接来使用）指定样式，该样式只在用户点击了页面中的超链接，并且跳转到target元素后起作用。 </li>
+<li>first-child、last-child、<br />
+指定第一个子元素和最后一个子元素</li>
+<li>nth-child(n)、nth-last-child(n)<ul>
+<li>n: 匹配第n个元素</li>
+<li>odd/2n+1/2n-1: 匹配奇数元素</li>
+<li>even/2n: 匹配偶数元素</li>
+<li>n+4: 选取大于等于4元素</li>
+<li>-n+4: 选取小于等于4元素</li>
+<li>3n+1: 自定义选取元素，此为“隔二取一”<br />
+<code>PS：不管那种变形，n都为大于等于0的整数，然后逐一匹配直到元素最大值</code></li>
+</ul>
+</li>
+<li>nth-of-type、nth-last-of-type    </li>
+<li>only-child<br />
+匹配只有一个子元素的元素</li>
+</ul>
+</li>
+<li>
+<p>UI元素状态伪类选择器</p>
+<blockquote>
+<p>这些选择器的共同特征是：指定的样式只有当元素处于某种状态下时才起作用，<br />
+在默认状态下不起作用</p>
+</blockquote>
+<ul>
+<li>E:focus、</li>
+<li>E:enabled、</li>
+<li>E:disabled、</li>
+<li>E:read-only、</li>
+<li>E:read-write、</li>
+<li>E:checked、</li>
+<li>E:default、</li>
+</ul>
+</li>
+</ul>
+<h4 id="4"><a name="user-content-4" href="#4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4. 伪元素选择器</h4>
+<blockquote>
+<p>是指并不是针对真正的元素使用的选择器，而是针对css中已经定义好的伪元素使用的选择器<br />
+css3的标准规定：伪类用单冒号&rdquo;:&rdquo;，伪元素用双冒号&rdquo;::&rdquo;</p>
+</blockquote>
+<ul>
+<li>
+<p>CSS2中的伪元素</p>
+<ul>
+<li>::before<br />
+用于在某个元素之前插入一些内容，通常与content属性配合使用</li>
+<li>::after,<br />
+用于在某个元素之后插入一些内容，通常与content属性配合使用<br />
+<pre><code>p::after{
+    content:attr(title);
+    display:block;
+    text-align:center;
+    margin-top:5px;
+}
+&lt;p title=&quot;蓝天白云&quot;&gt;&lt;img src=&quot;img/g003.jpg&quot;/&gt;&lt;/p&gt;
+</code></pre></li>
+<li>::first-letter,<br />
+获元素中的取第一个字符</li>
+<li>::first-line<br />
+获取元素中的第一行文字</li>
+</ul>
+</li>
+<li>
+<p>CSS3新增伪元素</p>
+<ul>
+<li>::selection: 匹配选择的文本，只能向::selection选择器应用少量CSS属性：color、background、cursor以及outline。<br />
+<code>css3新属性user-select: 设置是否允许用户选中文本。,值为none时不允许用户选择文本</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>字体及字体样式</h3>
+<h4 id="1"><a name="user-content-1" href="#1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1. 颜色</h4>
+<ul>
+<li>color name<br />
+<code>body{color:red;}</code></li>
+<li>Hex<br />
+<code>a{color:#ff6600}</code></li>
+<li>
+<p>RGB &amp; RGBA</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数</th>
+<th>说明</th>
+<th>取值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">R</td>
+<td>红色值</td>
+<td>正整数,百分数</td>
+</tr>
+<tr>
+<td align="center">G</td>
+<td>绿色值</td>
+<td>正整数,百分数</td>
+</tr>
+<tr>
+<td align="center">B</td>
+<td>蓝色值</td>
+<td>正整数,百分数</td>
+</tr>
+<tr>
+<td align="center">A</td>
+<td>Alpha透明度</td>
+<td>取值0~1之间</td>
+</tr>
+</tbody>
+</table>
+<pre><code>a{color:rgb(255,0,0)}
+.box{background-color:rgba(0,0,0,0.5)}
+</code></pre>
+
+</li>
+<li>
+<p>HSL(H,S,L) &amp; HSLA</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数</th>
+<th>说明</th>
+<th>取值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">H</td>
+<td>Hue(色调)</td>
+<td>取值：0-360。其中，红色：0(或360)，绿色：120，蓝色：240</td>
+</tr>
+<tr>
+<td align="center">S</td>
+<td>Saturation(饱和度)</td>
+<td>0%-100%</td>
+</tr>
+<tr>
+<td align="center">L</td>
+<td>Lightness(亮度)</td>
+<td>0%-100%</td>
+</tr>
+<tr>
+<td align="center">A</td>
+<td>Alpha透明度</td>
+<td>取值0~1之间</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>transparent<br />
+transparent是全透明黑色(black)的速记法，即一个类似rgba(0,0,0,0)这样的值。</p>
+</li>
+<li>opacity<br />
+使用浮点数指定对象的不透明度。值被约束在[0.0-1.0]范围内，如果超过了这个范围，其计算结果将截取到与之最相近的值</li>
+</ul>
+<h4 id="2-font-face"><a name="user-content-2-font-face" href="#2-font-face" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2. 服务器字体@font-face</h4>
+<pre><code>//规则如下：
+@font-face {
+    font-family: &lt;YourWebFontName&gt;;
+    src: &lt;source&gt; [&lt;format&gt;][,&lt;source&gt; [&lt;format&gt;]]*;
+    [font-weight: &lt;weight&gt;];
+    [font-style: &lt;style&gt;];
+}
+
+//示例：
+@font-face{
+    font-family:WebFont;
+    src:url(&quot;fonts/Fontin_Sans_B_45b.otf&quot;) format(&quot;opentype&quot;);
+    font-weight:normal;
+}
+
+</code></pre>
+
+<ul>
+<li>YourWebFontName:此值指的就是你自定义的字体名称，最好是使用你下载的默认字体，他将被引用到你的Web元素中的font-family。如“font-family:&rdquo;YourWebFontName&rdquo;;”</li>
+<li>source:此值指的是你自定义的字体的存放路径，可以是相对路径也可以是绝路径；</li>
+<li>
+<p>format：此值指的是你自定义的字体的格式，主要用来帮助浏览器识别，其值主要有以下几种类型以及浏览器的支持情况：</p>
+<ul>
+<li>truetype(.ttf),<br />
+【IE9+,Firefox3.5+,Chrome4+,Safari3+,Opera10+,iOS Mobile Safari4.2+】</li>
+<li>opentype(.otf),<br />
+【Firefox3.5+,Chrome4.0+,Safari3.1+,Opera10.0+,iOS Mobile Safari4.2+】</li>
+<li>woff(.woff)<br />
+Web Open Font Format是Web字体中最佳格式，他是一个开放的TrueType/OpenType的压缩版本，【IE9+,Firefox3.5+,Chrome6+,Safari3.6+,Opera11.1+】</li>
+<li>embedded-opentype(.eot),<br />
+IE专用字体，【IE4+】；</li>
+<li>svg(.svg)<br />
+基于SVG字体渲染的一种格式,支持这种字体的浏览器有【Chrome4+,Safari3.1+,Opera10.0+,iOS Mobile Safari3.2+】</li>
+</ul>
+<blockquote>
+<p>这就意味着在@font-face中我们至少需要woff,eot两种格式字体，甚至还需要svg等字体达到更多种浏览版本的支持。</p>
+</blockquote>
+<pre><code>    @font-face{
+        font-family: 'YourWebFontName';
+        src: url('YourWebFontName.eot'); /* IE9 Compat Modes */
+        src: url('YourWebFontName.eot?#iefix') format('embedded-opentype'), /*IE6-IE8 */
+            url('YourWebFontName.woff') format('woff'), /*Modern Browsers*/
+            url('YourWebFontName.ttf')  format('truetype'), /*Safari, Android, iOS*/
+            url('YourWebFontName.svg#YourWebFontName') format('svg'); /*Legacy iOS*/
+    }
+</code></pre>
+
+</li>
+<li>
+<p>weight和style:这两个值大家一定很熟悉，weight定义字体是否为粗体，style主要定义字体样式，如斜体。</p>
+</li>
+</ul>
+<h4 id="3_1"><a name="user-content-3_1" href="#3_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3. 文本样式</h4>
+<ul>
+<li>text-shadow<br />
+    设置文本阴影效果，可同时设置多个阴影效果<br />
+    格式：text-shadow:x y length color<ul>
+<li>x： 第1个长度值用来设置对象的阴影水平偏移值。可以为负值 </li>
+<li>y： 第2个长度值用来设置对象的阴影垂直偏移值。可以为负值 </li>
+<li>length： 如果提供了第3个长度值则用来设置对象的阴影模糊值。不允许负值 </li>
+<li>color： 设置对象的阴影的颜色。 </li>
+</ul>
+</li>
+<li>word-wrap<br />
+    设置或检索当内容超过指定容器的边界时是否断行（强调的是是否允许断行）<ul>
+<li>normal： 允许内容顶开或溢出指定的容器边界。 </li>
+<li>break-word： 内容将在边界内换行。如果需要，单词内部允许断行</li>
+</ul>
+</li>
+<li>word-break<br />
+    使用该属性自定义自动换行的处理方法（强调的则是怎么样来进行断行）<ul>
+<li>normal:使用浏览器默认换行规则</li>
+<li>keep-all:只能在半角空格或连接字符处换行</li>
+<li>break-all:允许在单词内换行（对于标点符号来说，允许标点符号位于行首，不过在IE中是不可以的）</li>
+</ul>
+</li>
+<li>white-space<ul>
+<li>normal：默认处理方式。</li>
+<li>nowrap：强制在同一行内显示所有文本，直到文本结束或者遭遇br对象。</li>
+<li>pre：用等宽字体显示预先格式化的文本，不合并文字间的空白距离，当文字超出边界时不换行。可查阅pre对象</li>
+<li>pre-wrap：用等宽字体显示预先格式化的文本，不合并文字间的空白距离，当文字碰到边界时发生换行。</li>
+<li>pre-line：保持文本的换行，不保留文字间的空白距离，当文字碰到边界时发生换行。</li>
+</ul>
+</li>
+<li>text-overflow<ul>
+<li>clip：当对象内文本溢出时将溢出的部分裁切掉。</li>
+<li>ellipsis：当对象内文本溢出时显示省略标记（&hellip;），<blockquote>
+<p>配合overflow:hidden和white-space:nowrap配合使用才出效果。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="_2"><a name="user-content-_2" href="#_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>其他新增样式</h3>
+<h4 id="1_1"><a name="user-content-1_1" href="#1_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1. 背景</h4>
+<blockquote></blockquote>
+<ul>
+<li>background-size:<ul>
+<li>length： 用长度值指定背景图像大小。不允许负值</li>
+<li>percentage： 用百分比指定背景图像大小。不允许负值</li>
+<li>auto： 背景图像的真实大小。</li>
+<li>cover： 将背景图像等比缩放到完全覆盖容器，背景图像有可能超出容器。</li>
+<li>contain： 将背景图像等比缩放到宽度或高度与容器的宽度或高度相等，背景图像始终被包含在容器内。</li>
+</ul>
+</li>
+<li>background-origin<ul>
+<li>padding-box(默认)： 从padding区域（含padding）开始显示背景图像。 </li>
+<li>border-box： 从border区域（含border）开始显示背景图像。 </li>
+<li>content-box： 从content区域开始显示背景图像。 </li>
+</ul>
+</li>
+<li>background-clip<ul>
+<li>padding-box： 从padding区域（不含padding）开始向外裁剪背景。 </li>
+<li>border-box(默认)： 从border区域（不含border）开始向外裁剪背景。 </li>
+<li>content-box： 从content区域开始向外裁剪背景。 </li>
+<li>text： 从前景内容的形状（比如文字）作为裁剪区域向外裁剪，如此即可实现使用背景作为填充色之类的遮罩效果   </li>
+</ul>
+</li>
+<li>多背景<br />
+<pre><code>//注意，background-color只能设置一次，且由于写在前面的背景会叠在之后的背景之上，所以背景色通常都定义在最后一组上，避免背景色将图像盖住。
+background:url(test1.jpg) no-repeat scroll 10px 20px/50px 60px content-box padding-box,
+       url(test2.jpg) no-repeat scroll 10px 20px/70px 90px content-box padding-box,
+       url(test3.jpg) no-repeat scroll 10px 20px/110px 130px content-box padding-box #aaa;
+</code></pre></li>
+</ul>
+<h4 id="2"><a name="user-content-2" href="#2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2. 边框</h4>
+<ul>
+<li>
+<p>border-image</p>
+<blockquote>
+<p>给元素边框添加背景图像，复合属性，包含以下属性：</p>
+</blockquote>
+<ul>
+<li>border-image-source： 设置或检索对象的边框是否用图像定义样式或图像来源路径。 </li>
+<li>border-image-slice： 设置对象的边框背景图的分割方式。 <br />
+该属性指定从上，右，下，左方位来分隔图像(不需要家单位)，将图像分成4个角，4条边和中间区域共9份，中间区域始终是透明的（即没图像填充），除非加上关键字 fill</li>
+<li>border-image-width： 设置对象的边框厚度。 </li>
+<li>border-image-outset： 设置对象的边框背景图的扩展。<br />
+该属性用于指定边框图像向外扩展所定义的数值，即如果值为10px，则图像在原本的基础上往外延展10px再显示。</li>
+<li>border-image-repeat： 设置对象的边框图像的平铺方式。<ul>
+<li>stretch(默认)： 指定用拉伸方式来填充边框背景图。 </li>
+<li>repeat： 指定用平铺方式来填充边框背景图。当图片碰到边界时，如果超过则被截断。 </li>
+<li>round： 指定用平铺方式来填充边框背景图。图片会根据边框的尺寸动态调整图片的大小直至正好可以铺满整个边框。写本文档时仅Firefox能看到该效果 </li>
+<li>space： 指定用平铺方式来填充边框背景图。图片会根据边框的尺寸动态调整图片的之间的间距直至正好可以铺满整个边框。 </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>box-shadow</p>
+<ul>
+<li>none： 无阴影 </li>
+<li>x： 第1个长度值用来设置对象的阴影水平偏移值。可以为负值 </li>
+<li>y： 第2个长度值用来设置对象的阴影垂直偏移值。可以为负值 </li>
+<li>length： 如果提供了第3个长度值则用来设置对象的阴影模糊值。不允许负值 </li>
+<li>offset： 如果提供了第4个长度值则用来设置对象的阴影外延值。可以为负值 </li>
+<li>color： 设置对象的阴影的颜色。 </li>
+<li>inset： 设置对象的阴影类型为内阴影。该值为空时，则对象的阴影类型为外阴影 </li>
+</ul>
+</li>
+</ul>
+<h4 id="3_2"><a name="user-content-3_2" href="#3_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3. 渐变</h4>
+<blockquote>
+<p>什么是渐变：渐变就是两种或多种颜色之间的平滑过渡</p>
+</blockquote>
+<ul>
+<li>
+<p>线形渐变：<br />
+    格式：linear-gradient(角度/关键字,起始颜色,结束颜色)</p>
+<ul>
+<li>angle：通过角度来确定渐变的方向。</li>
+<li>关键词：通过关键词来确定渐变的方向(格式：to + 方向)，比如“to top”、“to right”、“to bottom”和“to left”。</li>
+<li>color-stop：第2个和第3个参数，表示颜色的起始点和结束点。可以在两个颜色中间插入更多的颜色值</li>
+</ul>
+</li>
+<li>
+<p>径向渐变：<br />
+    格式：<code>radial-gradient(position,shape,size,color-stop,color-stop)</code>;</p>
+<ul>
+<li>position：主要用来定义径向渐变的圆心位置。其值主要有以下几种：<ul>
+<li>length：用长度值指定径向渐变圆心的横坐标或纵坐标。可以为负值。</li>
+<li>percentage：用百分比指定径向渐变圆心的横坐标或纵坐标。可以为负值。</li>
+<li>left：设置左边为径向渐变圆心的横坐标值。</li>
+<li>center(默认)：设置中间为径向渐变圆心的横坐标值或纵坐标。</li>
+<li>right：设置右边为径向渐变圆心的横坐标值。</li>
+<li>top：设置顶部为径向渐变圆心的纵标值。</li>
+<li>bottom：设置底部为径向渐变圆心的纵标值。</li>
+</ul>
+</li>
+<li>shape：主要用来定义径向渐变的形状。其主要包括两个值“circle”和“ellipse”：<ul>
+<li>circle：用来指定圆形的径向渐变</li>
+<li>ellipse(默认)：用来指定椭圆形的径向渐变。</li>
+</ul>
+</li>
+<li>size：主要用来确定径向渐变的结束形状大小。参数主要有：<ul>
+<li>closest-side：指定径向渐变的半径长度为从圆心到离圆心最近的边；</li>
+<li>closest-corner：指定径向渐变的半径长度为从圆心到离圆心最近的角；</li>
+<li>farthest-side：指定径向渐变的半径长度为从圆心到离圆心最远的边；</li>
+<li>farthest-corner(默认)：指定径向渐变的半径长度为从圆心到离圆心最远的角；</li>
+</ul>
+</li>
+<li>color-stop：表示颜色的起始点和结束点。可以在两个颜色中间插入更多的颜色值</li>
+</ul>
+</li>
+</ul></article></body></html>

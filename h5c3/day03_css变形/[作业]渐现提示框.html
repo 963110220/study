@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>[作业]渐现提示框</title>
+	<style>
+		body{padding:100px;}
+		a{display:inline-block;margin: 0 60px;}
+		.tips{position:absolute;padding:15px;width:230px;height:30px;color:#f00;border:1px solid #f00;border-radius:5px;transition:all 0.22s;opacity:0;}
+
+		.bd .tips{top:-100px;left:50%;margin-left:-131px;}
+		.tx .tips{transform:translate(-100px,-120px);}
+		.tips::before,.tips::after{
+			content:'';
+			position:absolute;left:50%;bottom:-20px;margin-left:-10px;
+			border:10px solid transparent;border-top-color:#f00;
+		}
+		.tips::after{border-top-color:#fff;bottom:-19px;}
+
+		a{position: relative;}
+		a.bd:hover .tips{opacity: 1;top:-80px;}
+		a.tx:hover .tips{transform:translate(-100px,-100px);opacity: 1;}
+	</style>
+</head>
+<body>
+	
+	<a href="http://www.baidu.com" class="bd">
+		百度是什么？
+		<div class="tips">不得不说，百度是一家广告公司</div>
+	</a>
+
+
+	<a href="http://www.qq.com" class="tx">
+		腾讯是什么？
+		<div class="tips">不得不说，腾讯是一家游戏公司</div>
+	</a>
+</body>
+</html>

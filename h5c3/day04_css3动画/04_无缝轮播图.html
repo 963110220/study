@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04_无缝轮播图</title>
+	<style>
+		ul{list-style: none;padding:0;margin:0;}
+		.carousel{position:relative;margin:0 auto;width:320px;border:5px solid #ddd;overflow:hidden;}
+		.carousel img{display:block;}
+		.carousel ul{width:320px;height:320px;animation:scrollMM 15s infinite;}
+		.carousel nav{position: absolute;right:0;bottom:0;margin:10px;overflow:hidden;}
+		.carousel nav span{float:left;margin:0 3px;width:20px;height:4px;background-color:#ddd;border-radius:4px;}
+		.carousel nav span:last-child{
+			position:absolute;top:0;left:0;
+			background-color:#fc0;
+			animation:highlight 15s infinite;
+		}
+
+		@keyframes scrollMM{
+			0%{}
+			15%{transform:translateY(0);}
+
+			20%{transform:translateY(-320px);}
+			35%{transform:translateY(-320px);}
+
+			40%{transform:translateY(-640px);}
+			55%{transform:translateY(-640px);}
+
+			60%{transform:translateY(-960px);}
+			75%{transform:translateY(-960px);}
+
+			80%{transform:translateY(-1280px);}
+			95%{transform:translateY(-1280px);}
+
+			100%{transform:translateY(-1600px);}
+		}
+
+		@keyframes highlight{
+			0%{}
+			15%{left:0;}
+
+			20%{left:26px;}
+			35%{left:26px;}
+
+			40%{left:52px;}
+			55%{left:52px;}
+
+			60%{left:78px;}
+			75%{left:78px;}
+
+			80%{left:104px;}
+			95%{left:104px;}
+			95.1%{left:0;}
+
+			100%{left:0;}
+		}
+	</style>
+</head>
+<body>
+	<div class="carousel">
+		<ul>
+			<li><img src="img/mm001.jpg" alt=""></li>
+			<li><img src="img/mm002.jpg" alt=""></li>
+			<li><img src="img/mm003.jpg" alt=""></li>
+			<li><img src="img/mm004.jpg" alt=""></li>
+			<li><img src="img/mm005.jpg" alt=""></li>
+			<li><img src="img/mm001.jpg" alt=""></li>
+		</ul>
+		<nav>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</nav>
+	</div>
+</body>
+</html>

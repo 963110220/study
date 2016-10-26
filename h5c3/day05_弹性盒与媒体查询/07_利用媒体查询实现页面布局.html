@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>06_css方式的媒体查询</title>
+	<style>
+		.container{overflow: hidden;}
+		.container div{float:left;width:33.3333%;height:200px;}
+		.container div:nth-child(1){background: #efefef;}
+		.container div:nth-child(2){background: #fc0;}
+		.container div:nth-child(3){background: #0cf;}
+
+		/* 
+		媒体查询代码格式
+			@media 查询代码{
+				css样式
+			}
+		PS：必须满足查询代码，才能应用内部的css样式
+		*/
+		@media screen and (max-width:680px){
+			.container div:nth-child(1){width:70%;}
+			.container div:nth-child(2){width:30%;}
+			.container div:nth-child(3){width:100%;}
+		}
+
+		@media screen and (max-width:480px){
+			.container div:nth-child(n){width:100%;}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+</body>
+</html>

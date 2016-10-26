@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>html5非主体结构标签</title>
+</head>
+<body>
+	<h1>html5非主体结构标签</h1>
+	<h3>datalist</h3>
+	<label for="movie">你最喜欢的一部电影：</label>
+	<input type="text" id="movie" list="movielist">
+	<datalist id="movielist">
+		<option value="湄公河行动" label="大陆">heh</option>
+		<option value="魔兽争霸" label="欧美">魔兽争霸</option>
+		<option value="变形金刚" label="欧美">变形金刚</option>
+		<option value="大话西游" label="港台">大话西游</option>
+	</datalist>
+
+	<h3>details</h3>
+	<details>
+		<summary>好消息好消息，清仓大处理</summary>
+		<p>note7只要998</p>
+	</details>
+
+	<h3>progress</h3>
+	<progress max="100" value="76">
+	    <span>76</span>% 
+	</progress>
+
+	<h3>mark</h3>
+	<p>千锋教育广州校区<mark>html5 1607</mark></p>
+
+	<h3>time</h3>
+	<p>今天的日期时<time>2016-10-17</time></p>
+	<p>2017的<time datatime="2016-2-14">情人节</time>怎么过</p>
+</body>
+</html>

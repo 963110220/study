@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>wux</title>
+		<style>
+		body:hover{transition:  2s;
+				-webkit-transform-origin: left top;
+				-webkit-transform:rotate(360deg)
+		}
+			#box{
+				transition:  2s;
+				width: 200px;
+				height: 200px;
+				margin: 100px auto;
+				border: 1px solid red;
+				position: relative;
+				-webkit-transform-origin: left top;
+				-webkit-transform:rotate(360deg)
+			}
+			#star{
+				
+				position: absolute;
+				border-right: 100px solid transparent;
+				border-left: 100px solid transparent;
+				border-bottom:70px solid red;
+				-webkit-transform-origin: center center;
+				-webkit-transform: rotate(35deg);
+			}
+			#star::before{
+				content: "";
+				width: 0;
+				height: 0;
+				top: 0px;
+				left: -95px;
+				position: absolute;
+				border-right: 100px solid transparent;
+				border-left: 100px solid transparent;
+				border-bottom:70px solid red;
+				-webkit-transform-origin: center center;
+				-webkit-transform: rotate(75deg);
+			}
+			#star::after{
+				content: "";
+				position: absolute;
+				border-right: 100px solid transparent;
+				border-left: 100px solid transparent;
+				border-bottom:70px solid red;
+				-webkit-transform-origin: center center;
+				-webkit-transform: rotate(-70deg);
+				top: 2px;
+				left: -102px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="star"></div>
+		</div>
+	</body>
+</html>

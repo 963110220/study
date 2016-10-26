@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas标签</title>
+	<style>
+		canvas{border:1px solid #ddd;}
+	</style>
+	<script>
+		document.addEventListener('DOMContentLoaded',function(){
+			var canvas = document.querySelector('canvas');
+			canvas.width = 600;
+			canvas.height = 600;
+		})
+	</script>
+</head>
+<body>
+	<!-- 
+		1、不支持canvas标签的浏览起才会显示里面的内容
+		2、千万不要用css改变canvas的大小
+		3、可以设置width和height属性，但是属性值单位必须是px，否则忽略，默认300*150px
+	 -->
+	<canvas>你的浏览器不支持canvas标签，请升级你的浏览你</canvas>
+</body>
+</html>

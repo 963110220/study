@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>属性选择器</title>
+	<style>
+		ol > li{margin:1px 0;line-height:2;}
+		ol > li:first-child{color:#f00;}
+
+		/* 
+			属性选择器
+			1)获取第二个li
+			2)获取所有带data-index属性的li
+		*/
+		ol > li[data-index="100"]{color:#0f0;}
+		ol > li[data-index]{font-weight:bold;}
+		ol > li[data-index^='100']{text-decoration:underline;}
+		ol > li[data-index$='10']{border-left:10px solid #f00;}
+		ol > li[data-index*='100']{background-color:#efefef;}
+
+
+	</style>
+</head>
+<body>
+	<section>
+		<ol>
+			<li data-index="10">data-index="10"</li>
+			<li data-index="100">data-index="100"</li>
+			<li data-index="10086">data-index="10086"</li>
+			<li data-index="10010">data-index="10010"</li>
+			<li>中国电信10000</li>
+			<li data-index="110">data-index="1010"</li>
+			<li>交通事故电话：122</li>
+			<li>天气：112</li>
+		</ol>
+	</section>
+</body>
+</html>

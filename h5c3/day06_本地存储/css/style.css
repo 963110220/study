@@ -1,0 +1,18 @@
+html,body{height:100%;}
+body{padding:0;margin:0;display:flex;flex-wrap:wrap;flex-direction:column;}
+ul{list-style:none;padding:0;margin:0;}
+
+header,footer{height:50px;line-height:50px;background-color: #387ef5;color:#fff;}
+header{text-align:center;}
+header h1{margin:0;font-size:26px;}
+footer nav{display:flex;text-align: center;}
+footer nav a{color:#fff;text-decoration: none;flex:1;}
+footer nav a:hover{background-color: rgba(255,255,255,.1)}
+
+.container{padding:10px;background-color: #efefef;flex:1}
+.container ul{display:flex;flex-wrap:wrap;}
+.container ul li{margin:10px;}
+
+.container img{
+	width:160px;height:160px;border:1px solid #ddd;
+}

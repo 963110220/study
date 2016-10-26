@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>3D相册</title>
+		<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+			.box{
+				width: 600px;
+				position: relative;
+				transform-style: preserve-3d;
+				margin: 300px auto;
+				/*perspective: 800px;*/
+				transform: perspective(1600px) rotateX(45deg);
+			}
+			.box img{
+				position: absolute;
+				left: 50%;
+				top: 0;
+			}
+		</style>
+		<script>
+			document.addEventListener("DOMContentLoaded",function(){
+				var Box = document.querySelector(".box");
+				var eImg = Box.querySelectorAll("img");
+				var angle = 360/eImg.length;
+				for(var i=0;i<eImg.length;i++){
+					var radian = angle/2*Math.PI/180;
+					var x = 133/2/Math.tan(radian);
+					eImg[i].style.transform="rotateY("+i*angle+"deg) translateZ("+(x+10)+"px)";
+				}
+				var angleX =  45;
+				var angleY =  0;
+				document.onmousedown=function(e){
+					var startX = e.clientX;
+					var startY = e.clientY;
+					 
+					document.onmousemove=function(e){
+						var endX = e.clientX;
+						var endY = e.clientY;
+						 angleX -= (endY - startY)*0.2;
+						 angleY += (endX-startX)*0.2;
+						Box.style.transform="perspective(1600px) rotateX("+angleX+"deg) rotateY("+angleY+"deg)";
+						console.log(angleX+","+angleY);
+						e.preventDefault();
+						startX=endX;
+						startY=endY;
+					}
+					e.preventDefault();
+					document.onmouseup=function(){
+						document.onmousemove=null;
+					}
+				}
+			})
+			
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<img src="img/1.jpg" alt=""/>
+			<img src="img/2.jpg" alt=""/>
+			<img src="img/3.jpg" alt=""/>
+			<img src="img/4.jpg" alt=""/>
+			<img src="img/5.jpg" alt=""/>
+			<img src="img/6.jpg" alt=""/>
+			<img src="img/7.jpg" alt=""/>
+			<img src="img/8.jpg" alt=""/>
+			<img src="img/9.jpg" alt=""/>
+			<img src="img/10.jpg" alt=""/>
+			<img src="img/11.jpg" alt=""/>
+		</div>
+	</body>
+</html>

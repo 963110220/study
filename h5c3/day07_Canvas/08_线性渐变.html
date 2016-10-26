@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>08_线性渐变</title>
+	<style>
+		canvas{border:1px solid #ddd;}
+	</style>
+	<script>
+		document.addEventListener('DOMContentLoaded',function(){
+			var canvas = document.querySelector('canvas');
+			canvas.width = canvas.height = 600;
+
+			var ctx = canvas.getContext('2d');
+			
+			// 创建渐变线性对象
+			var lg = ctx.createLinearGradient(0,0,200,0);
+			lg.addColorStop(0,'#f00');
+			lg.addColorStop(0.5,'#0f0');
+			lg.addColorStop(1,'#ff0');
+
+			// 把渐变对象放到填充样式中
+			ctx.fillStyle = lg;
+
+			ctx.fillRect(10,10,200,200);
+		})
+	</script>
+</head>
+<body>
+	<canvas>你的浏览器不支持canvas标签，请升级你的浏览你</canvas>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>八卦图</title>
+		<style>
+		 	#yin_yang{
+		 		width: 196px;
+		 		height: 98px;
+		 		background: #fff;
+		 		border-color: red;
+		 		border-style: solid;
+		 		border-width: 2px 2px 100px 2px;
+		 		border-radius: 100%;
+		 		position: relative;
+		 	}
+		 	#yin_yang:before{
+		 		position: absolute;
+		 		top: 50%;
+		 		width: 20px;
+		 		height: 20px;
+		 		background: #fff;
+		 		border-radius: 100%;
+		 		border: 39px solid red;
+		 		content: "";
+		 	}
+		 	#yin_yang:after{
+		 		content: "";
+		 		width: 20px;
+		 		height: 20px;
+		 		border-radius: 100%;
+		 		position: absolute;
+		 		top: 50%;
+		 		left: 50%;
+		 		background: red;
+		 		border: 39px solid #fff;
+		 	}
+		 	#yuan{
+		 		margin: 20px;
+		 		width: 100px;
+		 		height: 100px;
+		 		background-color: #fff;
+		 		border: 1px solid red;
+		 		border-radius: 100%;
+		 	}
+		 	#gong{
+		 		position: relative;
+		 		width: 100px;
+		 		height: 100px;
+		 		border-top-left-radius: 100%;
+		 		border-top-right-radius: 100%;
+		 		border: 1px solid red;
+		 	}
+		 	#shan{
+		 		margin: 20px;
+		 		width: 100px;
+		 		height: 100px;
+		 		border: 1px solid red;
+		 		border-top-left-radius:100% ;
+		 	}
+		 	#tuoyuan{
+		 		width: 100px;
+		 		height: 50px;
+		 		border: 1px solid red;
+		 		border-radius: 100%;
+		 	}
+		 	#zuojiao{
+		 		margin: 20px;
+		 		width: 100px;
+		 		height: 100px;
+		 		border: 1px solid red;
+		 		border-top-left-radius: 50%;
+		 	}
+		 	#banyuan{
+		 		margin: 20px;
+		 		width: 100px;
+		 		height: 10px;
+		 		border: 1px solid red;
+		 		border-top-left-radius: 100%;
+		 		border-top-right-radius: 100%;
+		 	}
+		 	#lbg{
+		 		position: relative;
+		 		width: 98px;
+		 		height: 49px;
+		 		border-style: solid;
+		 		border-color: green;
+		 		background: red;
+		 		border-radius: 100%;
+		 		border-width: 1px 1px 50px 1px;
+		 	}#lbg:before{
+		 		content: "";
+		 		position: absolute;
+		 		top: 50%;
+		 		background: green;
+		 		width: 12px;
+		 		height: 12px;
+		 		border-radius: 100%;
+		 		border: 18px solid red;
+		 	}
+		 	#lbg:after{
+		 		content: "";
+		 		position: absolute;
+		 		top: 50%;
+		 		left: 50%;
+		 		border-radius: 100%;
+		 		background-color: red;
+		 		width: 12px;
+		 		height: 12px;
+		 		border: 18px solid green;
+		 	}
+		 	#ban{
+		 		margin: 20px;
+		 		width: 96px;
+		 		height: 48px;
+		 		background: #eee;
+		 		border-top-left-radius: 48px;
+		 		border-top-right-radius: 48px;
+		 		border: 2px solid red;
+		 	}
+		 	#bag{
+		 		width: 396px;
+		 		height: 198px;
+		 		background: #fff;
+		 		border-style: solid;
+		 		border-color: red;
+		 		border-width: 2px 2px 200px 2px;
+		 		border-radius: 100%;
+		 		position: relative;
+		 	}
+		 	#bag:before{
+		 		position: absolute;
+		 		top: 50%;
+		 		content: "";
+		 		width: 40px;
+		 		height: 40px;
+		 		background-color: #fff;
+		 		border: 79px solid red;
+		 		border-radius: 100%;
+		 	}
+		 	#bag:after{
+		 		content: "";
+		 		position: absolute;
+		 		width: 40px;
+		 		height: 40px;
+		 		border: 79px solid #FFFFFF;
+		 		background-color: red;
+		 		top: 50%;
+		 		left: 50%;
+		 		border-radius:100% ;
+		 	}
+		</style>
+	</head>
+	<body>
+		<div id="yin_yang"></div>
+		<div id="yuan"></div>
+		<div id="gong"></div>
+		<div id="shan"></div>
+		<div id="tuoyuan"></div>
+		<div id="zuojiao"></div>
+		<div id="banyuan"></div>
+		<div id="lbg"></div>
+		<div id="ban"></div>
+		<div id="bag"></div>
+	</body>
+</html>

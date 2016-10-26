@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>五角星</title>
+	<style>
+	/*五角星*/
+	 #star-five{margin:100px;position:relative;color:red;width:0;height:0;border:100px solid transparent;border-bottom:70px solid red;border-top:none;
+	 	transform:rotate(35deg);
+	 }
+	#star-five::before{content:'';position:absolute;top:0;left:-100px;width:0;height:0;border:100px solid transparent;border-bottom:70px solid red;border-top:none;
+		transform:rotate(-70deg);
+	} 
+	  #star-five::after{content:'';position:absolute;height:0;width:0;top:-80px;left:-68px;border:30px solid transparent;border-bottom:80px solid red;
+		transform:rotate(-35deg);
+	} 
+	.container{width:200px;height:200px;transition:transform 1s;}
+	.container:hover{transform: rotate(360deg) scale(0.2);} 
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div id="star-five"></div>
+	</div>
+</body>
+</html>

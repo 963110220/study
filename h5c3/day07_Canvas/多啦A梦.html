@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="canvas" width="1600" height="1000"></canvas>
+	</body>
+	<script type="text/javascript">
+		var canvas=document.getElementById("canvas");
+		var c=canvas.getContext("2d");
+		var mouthX=200;
+		var righteyex=515;
+		var righteyey=35;
+		var num=0;
+
+		var mouthspeedX=10;
+		var righteyespX=-1;
+		var righteyespY=-1;
+		setInterval(function(){
+		   duolaameng(mouthX,righteyex,righteyey);
+		    mouthX+=mouthspeedX;
+		    righteyex+=righteyespX;
+		    righteyey+=righteyespY;
+		    num+=0.05;
+		    jstfy();
+		    write(num);
+		    
+		   
+		},50);
+		
+		
+		function jstfy(){
+			if(mouthX>=230){
+		    mouthspeedX*=-1;
+		    }
+		    if(mouthX<=150){
+		   	mouthspeedX*=-1;
+		   }
+		    if(righteyex<=505 || righteyex>=515){
+		    	righteyespX*=-1;
+		    }
+		    if(righteyey<=30 || righteyey>=40){
+		    	righteyespY*=-1;
+		    }
+		    if(num>=8){
+		    	num=0;
+		    }
+		}
+		function write(num){
+			c.clearRect(700,80,1100,300);
+			c.beginPath();
+			c.font="italic 80px MV Boli";
+			var ig=c.createLinearGradient(800,200,1050,270);
+			ig.addColorStop(0,"yellow");
+			ig.addColorStop(0.2,"blue");
+			ig.addColorStop(0.4,"green");
+			ig.addColorStop(0.6,"pink");
+			ig.addColorStop(0.8,"red");
+			ig.addColorStop(1,"wheat");
+			c.strokeStyle = ig;
+			if(num<2){
+			    c.strokeText("看什么看",700,150);
+			}
+			else if(num<4){
+				 c.strokeText("你个2b",700,150);
+			}else if(num<6){
+				c.strokeText("不服?",700,150);
+			}else{
+				c.strokeText("来打我啊！",700,150);
+			}
+		}
+		function duolaameng(mouthX,righteyex,righteyey){
+			//头部蓝圆
+		c.beginPath();
+		c.strokeStyle="black";
+		c.fillStyle="skyblue";
+		c.arc(500,100,100,0,Math.PI*2,false);
+		c.fill();
+		c.stroke();
+		c.closePath();
+		c.beginPath();
+//		var grd=ctx.createRadialGradient(450,50,80,500,100,80);
+//		grd.addColorStop(0,"white");
+//		grd.addColorStop(1,"skyblue");
+		//脸部圆
+		c.beginPath();
+		c.strokeStyle="black"
+		c.fillStyle="white";
+		c.arc(500,120,90,0,Math.PI*2,false);
+		c.fill();
+		c.stroke()
+		c.closePath();
+		//左眼睛
+		c.beginPath();
+		c.strokeStyle="black";
+		c.fillStyle="white";
+		c.bezierCurveTo(470,20,480,10,490,20);
+		c.quadraticCurveTo(500,35,490,50);
+		c.quadraticCurveTo(480,60,470,50);
+		c.quadraticCurveTo(460,35,470,20);
+		c.stroke();
+		c.fill();
+		c.closePath();
+		//右眼睛
+		c.beginPath();
+		c.strokeStyle="black";
+		c.fillStyle="white";
+		c.bezierCurveTo(503,20,513,10,523,20);
+		c.quadraticCurveTo(533,35,523,50);
+		c.quadraticCurveTo(513,60,503,50);
+		c.quadraticCurveTo(493,35,503,20);
+		c.stroke();
+		c.fill();
+		c.closePath();
+		//左眼睛内部
+		c.beginPath();
+		c.strokeStyle="black";
+		c.moveTo(473,25);
+		c.lineTo(490,35);
+		c.lineTo(473,35);
+		c.lineCap="round";
+		c.stroke();
+		c.beginPath();
+		c.strokeStyle="black";
+		c.moveTo(473,45);
+		c.lineTo(490,35);
+		c.lineCap="round";
+		c.stroke();
+		//右眼睛内部
+		c.beginPath();
+		c.fillStyle="black";
+		c.arc(510,35,10,0,Math.PI*2,false);
+		c.fill();
+		c.closePath();
+		c.beginPath();
+		c.fillStyle="white";
+		c.arc(righteyex,righteyey,3,0,Math.PI*2,false);
+		c.fill();
+		c.closePath();
+		//鼻子
+		c.beginPath();
+		c.fillStyle="red";
+		c.arc(497,60,10,0,Math.PI*2,false);
+		c.fill();
+		c.closePath();
+		//中线
+		c.beginPath();
+		c.strokeStyle="black";
+		c.moveTo(498,70);
+		c.lineTo(498,110);
+		c.lineCap="round";
+		c.stroke();
+		//嘴巴
+		c.beginPath();
+		c.strokeStyle="black";
+		c.fillStyle="pink";
+		//c.arc(498,110,55,0,Math.PI,false);
+		c.bezierCurveTo(443,110,498,mouthX,553,110);
+		c.fill();
+		c.moveTo(430,110);
+		c.lineTo(563,110);
+		c.stroke();
+		c.closePath();
+		c.beginPath();
+		c.strokeStyle="black";
+		c.arc(430,105,5,Math.PI/2,Math.PI/2*3,false);
+		c.stroke();
+		c.closePath();
+		c.beginPath();
+		c.strokeStyle="black";
+	    c.arc(563,105,5,Math.PI/2*3,Math.PI/2,false);
+		c.stroke();
+		c.closePath();
+		
+		//胡须
+		c.beginPath();
+		c.strokeStyle="black";
+		c.moveTo(425,55);
+		c.lineTo(480,70);
+		c.stroke();
+		
+		c.beginPath();
+		c.strokeStyle="black";
+		c.moveTo(420,75);
+		c.lineTo(480,75);
+		c.stroke();
+		
+		c.beginPath();
+		c.strokeStyle="black";
+		c.moveTo(425,95);
+		c.lineTo(480,80);
+		c.stroke();
+		
+		c.beginPath();
+		c.strokeStyle="black";
+		c.moveTo(575,55);
+		c.lineTo(520,70);
+		c.stroke();
+		
+		c.beginPath();
+		c.strokeStyle="black";
+		c.moveTo(580,75);
+		c.lineTo(520,75);
+		c.stroke();
+		
+		c.beginPath();
+		c.strokeStyle="black";
+		c.moveTo(575,95);
+		c.lineTo(520,80);
+		c.stroke();
+		
+		//身体外部
+		c.beginPath();
+		c.fillStyle="skyblue";
+		c.strokeStyle="black";
+		c.bezierCurveTo(428,175,405,255,430,305);
+		c.quadraticCurveTo(465,315,500,305);
+		c.quadraticCurveTo(535,315,570,305);
+		c.quadraticCurveTo(598,255,570,175);
+		c.stroke();
+		c.fill();
+		//左手
+		c.beginPath();
+		c.fillStyle="skyblue";
+		c.strokeStyle="black";
+        c.bezierCurveTo(428,175,410,185,378,235);
+        c.quadraticCurveTo(392,240,385,240);
+        c.quadraticCurveTo(398,242,420,230);
+		c.stroke();
+		c.fill();
+		c.beginPath();
+		c.strokeStyle="black";
+		c.fillStyle="white";
+		c.arc(380,240,8,0,Math.PI*2,false);
+		c.stroke();
+		c.fill();
+		//右手
+		c.beginPath();
+		c.fillStyle="skyblue";
+		c.strokeStyle="black";
+		c.bezierCurveTo(570,180,575,160,620,135);
+		c.quadraticCurveTo(625,145,625,145);
+		c.quadraticCurveTo(610,200,580,210)
+		c.stroke();
+		c.fill();
+		c.beginPath();
+		c.strokeStyle="black";
+		c.fillStyle="white";
+		c.arc(628,135,10,0,Math.PI*2,false);
+		c.stroke();
+		c.fill();
+		//百宝袋
+		c.beginPath();
+		c.fillStyle="white";
+		c.arc(500,235,60,0,Math.PI*2);
+		c.fill();
+		c.beginPath();
+		c.strokeStyle="black";
+		c.arc(500,220,40,0,Math.PI,false);
+		c.moveTo(460,220);
+		c.lineTo(540,220);
+		c.stroke();
+		//左脚
+		c.beginPath();
+		c.strokeStyle="black";
+		c.bezierCurveTo(430,305,420,315,430,325);
+		c.quadraticCurveTo(465,335,500,325);
+		c.quadraticCurveTo(510,315,500,305);
+		c.stroke();
+		//右脚
+		c.beginPath();
+		c.strokeStyle="black";
+		c.bezierCurveTo(500,325,530,335,570,325);
+		c.quadraticCurveTo(580,315,570,305);
+		c.stroke();
+
+		//颈部
+		c.beginPath();
+		c.strokeStyle="black";
+//      c.moveTo(418,160)
+//      c.lineTo(580,160)
+        c.fillStyle="yellow";
+        c.bezierCurveTo(428,165,500,190,570,165);
+        c.quadraticCurveTo(580,170,570,175);
+        c.quadraticCurveTo(500,200,428,175);
+        c.quadraticCurveTo(418,170,428,165);
+		c.stroke();
+		c.fill();
+		c.closePath();
+		
+		//铃铛
+		c.beginPath();
+		c.strokeStyle="black";
+		c.fillStyle="orange";
+		c.arc(500,190,10,0,Math.PI*2,false);
+		c.fill();
+		c.stroke();
+		c.closePath();
+		c.beginPath();
+		c.strokeStyle="black";
+		c.bezierCurveTo(490,190,500,200,510,190);
+		c.stroke();
+		}
+	</script>
+</html>

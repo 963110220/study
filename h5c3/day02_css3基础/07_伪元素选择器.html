@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>伪元素选择器</title>
+    <style>
+    	ul ul li::selection{
+    		background-color:#f00;color:#fff;
+    	}
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <p>CSS2中的伪类
+                <br> :link,:visited,:hover,:active(注意顺序)
+            </p>
+        </li>
+        <li>
+            <p>结构性伪类选择器：可以基于元素在标记中的位置进行定位</p>
+            <ul>
+                <li>:root、
+                    <br> 匹配E元素在文档的根元素。在HTML中，根元素永远是HTML </li>
+                <li>:not (n)、
+                    <br> 如果相对某个结构元素使用样式，但是想排除这个结构元素下面的子结构元素，让它不使用整个样式时，可以使用not选择器
+                </li>
+                <li>:empty、
+                    <br> 使用该选择器来制定当元素内容为空白时使用的样式
+                </li>
+                <li>:target
+                    <br> 使用该选择器来对页面中的某个target元素（该元素的id当做页面中的超链接来使用）指定样式，该样式只在用户点击了页面中的超链接，并且跳转到target元素后起作用。 </li>
+                <li>first-child、last-child、
+                    <br> 指定第一个子元素和最后一个子元素
+                </li>
+                <li>nth-child(n)、nth-last-child(n)
+                    <ul>
+                        <li>n: 匹配第n个元素</li>
+                        <li>odd/2n+1/2n-1: 匹配奇数元素</li>
+                        <li>even/2n: 匹配偶数元素</li>
+                        <li>n+4: 选取大于等于4元素</li>
+                        <li>-n+4: 选取小于等于4元素</li>
+                        <li>3n+1: 自定义选取元素，此为“隔二取一”
+                            <br>
+                            <code>PS：不管那种变形，n都为大于等于0的整数，然后逐一匹配直到元素最大值</code></li>
+                    </ul>
+                </li>
+                <li>nth-of-type、nth-last-of-type </li>
+                <li>only-child
+                    <br> 匹配只有一个子元素的元素
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>UI元素状态伪类选择器</p>
+            <blockquote>
+                <p>这些选择器的共同特征是：指定的样式只有当元素处于某种状态下时才起作用，
+                    <br> 在默认状态下不起作用
+                </p>
+            </blockquote>
+            <ul>
+                <li>E:focus、</li>
+                <li>E:enabled、</li>
+                <li>E:disabled、</li>
+                <li>E:read-only、</li>
+                <li>E:read-write、</li>
+                <li>E:checked、</li>
+                <li>E:default、</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+
+</html>

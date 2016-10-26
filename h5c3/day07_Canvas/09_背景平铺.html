@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>08_线性渐变</title>
+	<style>
+		canvas{border:1px solid #ddd;}
+	</style>
+	<script>
+		document.addEventListener('DOMContentLoaded',function(){
+			var canvas = document.querySelector('canvas');
+			canvas.width = canvas.height = 600;
+
+			var ctx = canvas.getContext('2d');
+			
+			var img= new Image();
+			img.src = 'img/mv1.jpg';
+
+			img.onload = function(){
+				var pat=ctx.createPattern(img,"repeat");
+				ctx.fillStyle=pat;//  把背景图设置给填充的样式
+				ctx.rect(0,0,500,500);
+				ctx.fill();
+			}
+		})
+	</script>
+</head>
+<body>
+	<canvas>你的浏览器不支持canvas标签，请升级你的浏览你</canvas>
+</body>
+</html>

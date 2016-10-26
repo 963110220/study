@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width: 200px;
+				height: 200px;
+				border: 1px solid red;
+				position: relative;
+				margin: 100px auto;
+			}
+		 	#star{
+		 		width: 0;
+		 		height: 0;
+		 		position: absolute;
+		 		border-right: 100px solid transparent;
+		 		border-left: 100px solid transparent;
+		 		border-bottom: 70px solid red;
+		 		-webkit-transform-origin: center center;
+		 		-webkit-transform: rotate(35deg);
+		 		transition: transform 1s;
+		 	}
+		 	#star::before,#star::after{
+		 		position: absolute;
+		 		content: "";
+		 		border-right: 100px solid transparent;
+		 		border-left: 100px solid transparent;
+		 		border-bottom: 70px solid red;
+		 	}
+		 	#star::before{
+		 		left: -100px;
+		 		-webkit-transform: rotate(75deg);
+		 	}
+		 	/*#star::after{
+		 		left: -105px;
+		 		top: 3px;
+		 		-webkit-transform: rotate(-70deg);
+		 	}*/
+	 
+		</style>
+	</head>
+	<body>
+		<div id="box">			
+		<div id="star"></div>
+		</div>
+		<img src="CSS3图片动态提示效果/imgs640/IMG_1.jpg" />
+	</body>
+</html>

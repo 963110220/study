@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		document.addEventListener('DOMContentLoaded',function(){
+			var canvas = document.querySelector('canvas');
+			canvas.width = canvas.height = 600;
+
+			var ctx = canvas.getContext('2d');
+
+
+			ctx.moveTo(100,100);
+			ctx.lineTo(300,100);
+
+			ctx.lineWidth = 10;
+			ctx.strokeStyle = '#ff0000';
+			ctx.stroke();
+			// 保存当前绘画状态
+			ctx.save();
+
+			ctx.beginPath();
+			ctx.moveTo(100,150);
+			ctx.lineTo(300,150);
+			ctx.strokeStyle = '#0f0';
+			ctx.stroke();
+
+			// 保存当前绘画状态
+			ctx.save();
+
+			ctx.beginPath();
+			ctx.moveTo(100,200);
+			ctx.lineTo(300,200);
+			ctx.strokeStyle = '#00f';
+			ctx.stroke();
+
+			// 还原之前保存过的路径状态和属性
+			ctx.restore();
+
+			ctx.beginPath();
+			ctx.moveTo(100,250);
+			ctx.lineTo(300,250);
+			ctx.stroke();
+
+			ctx.restore();
+			ctx.beginPath();
+			ctx.moveTo(100,300);
+			ctx.lineTo(300,300);
+			ctx.stroke();
+
+		});
+	</script>
+</head>
+<body>
+	<canvas>你的浏览器不支持canvas标签，请升级你的浏览你</canvas>
+</body>
+</html>

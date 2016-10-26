@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆圆翻转效果</title>
+    <style>
+        body{padding:100px;}
+        /*
+            transition的第一个参数为动画属性
+                只要这个属性的值有改变，就会产生动画
+         */
+        .yy{position:relative;margin:100px auto;width:360px;height:500px;}
+        .yy img{position:absolute;top:0;left:0;padding:5px;width:360px;height:500px;border:5px solid #ddd;box-sizing:border-box;border-radius:10px;background-color:#fff;transform-origin:center bottom;transition:transform 1s;}
+        .yy:hover img:nth-child(1){
+            transform:rotate(-45deg);
+        }
+        .yy:hover img:nth-child(2){
+            transform:rotate(-30deg);
+        }
+        .yy:hover img:nth-child(3){
+            transform:rotate(-15deg);
+        }
+        .yy:hover img:nth-child(5){
+            transform:rotate(15deg);
+        }
+        .yy:hover img:nth-child(6){
+            transform:rotate(30deg);
+        }
+        .yy:hover img:nth-child(7){
+            transform:rotate(45deg);
+        }
+
+        /*
+            简单动画
+         */
+        .box{width:100px;height:100px;background-color: #f00;transition:all 1s ease-in 3s;}
+        .box:hover{width:800px;height:200px;background:#0f0;}
+    </style>
+</head>
+<body>
+    <div class="yy">
+        <img src="img/yy_1.jpg" alt="">
+        <img src="img/yy_2.png" alt="">
+        <img src="img/yy_3.jpg" alt="">
+        <img src="img/yy_4.png" alt="">
+        <img src="img/yy_5.jpg" alt="">
+        <img src="img/yy_6.jpg" alt="">
+        <img src="img/yy_7.jpg" alt="">
+    </div>
+
+    <div class="box"></div>
+</body>
+</html>

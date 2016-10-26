@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>结构性伪类选择器</title>
+	<style>
+		input:focus{
+			border:2px solid #f00;
+		}
+		input:disabled{border:3px solid #ccc;}
+		input[type=checkbox]:checked{
+			/*border:3px solid #ccc;background-color:#ddd;*/
+			border:none;
+			outline:2px solid #f00;
+		}
+	</style>
+</head>
+<body>
+	<p>
+		<label for="username">用户名：</label>
+		<input type="text" id="username">
+	</p>
+	<p>
+		<label for="password">密码：</label>
+		<input type="password" id="password">
+	</p>
+	<p>
+		<label for="">
+			<input type="checkbox" id="qtmdl">7天免登陆
+		</label>
+	</p>
+	<button id="btnLogin">登录</button>
+</body>
+</html>

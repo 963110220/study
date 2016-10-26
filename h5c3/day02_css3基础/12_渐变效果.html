@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>渐变效果</title>
+    <style>
+    	.box{position:relative;margin:50px;width:300px;height:200px;border:1px solid #f00;border-radius:10px;
+        background:linear-gradient(to top,#ff0,#0ff,#f60);
+        /* 
+            浏览器兼容：添加浏览器前缀
+                1）-webkit：chrome,safari,opera
+                2）-moz:firefox;
+                3）-ms:IE;
+                4）-o:opera;
+        */
+        /*background:-webkit-linear-gradient(top,#ff0,#f60);
+        background:-moz-linear-gradient(top,#ff0,#f60);
+        background:-ms-linear-gradient(top,#ff0,#f60);
+        background:-o-linear-gradient(top,#ff0,#f60);*/
+        }
+
+        /*
+            //标准写法
+            radial-gradient([[<shape>||<size>]?[at <position>,]?<color-stop>[,<color-stop>]+)
+            //-webkit-老版本径向渐变的写法
+            -webkit-radial-gradient([<position>||<angle>,]? [<shape>||<size>,]>?<color-stop>[,<color-stop>]+)
+         */
+        .radial{            
+            /*老式写法：*/
+            background-image:-webkit-radial-gradient(50% 0,circle closest-corner, #f00,#ff0,#080);
+
+            /*标准写法*/
+            /*background-image:radial-gradient(circle closest-corner at 10% 30%, red, blue)*/
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <div class="box radial"></div>
+</body>
+
+</html>

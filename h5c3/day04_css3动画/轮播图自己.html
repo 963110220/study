@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				margin: 0 auto;
+				border: 5px solid darkgrey;
+				width: 320px;
+				height: 320px;
+				overflow: hidden;
+				position: relative;
+			}
+			.box img{
+				display: block;
+			}
+			.box ul{padding: 0;margin: 0;list-style: none;animation: scrollMM 15s linear infinite;}
+			@keyframes scrollMM{
+				0%{transform: translateY(0px);}
+				15%{transform: translateY(0px);}
+				
+				20%{transform: translateY(-320px);}
+				35%{transform: translateY(-320px);}
+				
+				40%{transform: translateY(-640px);}
+				55%{transform: translateY(-640px);}
+				
+				60%{transform: translateY(-960px);}
+				75%{transform: translateY(-960px);}
+				
+				80%{transform: translateY(-1280px);}
+				95%{transform: translateY(-1280px);}
+				
+				100%{transform: translateY(-1600px);}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<ul>
+			<li><img src="img/mm001.jpg" /></li>
+			<li><img src="img/mm002.jpg" /></li>
+			<li><img src="img/mm003.jpg" /></li>
+			<li><img src="img/mm004.jpg" /></li>
+			<li><img src="img/mm005.jpg" /></li>
+			<li><img src="img/mm001.jpg" /></li>
+			</ul>
+		</div>
+		<nav>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</nav>
+	</body>
+</html>

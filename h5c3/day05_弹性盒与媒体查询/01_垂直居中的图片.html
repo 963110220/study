@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01_垂直居中的图片</title>
+	<style>
+		ul{list-style: none;margin:0;padding:0;}
+		.wrap img{width:160px;}
+		.wrap ul{
+			margin:0 auto;width:800px;height:800px;border:1px solid #ddd;
+			display:flex;flex-wrap:wrap;/*flex-direction:column;*/
+		}
+		.wrap li{
+			margin:5px;height:300px;border:1px solid #ddd;
+
+			/*弹性盒属性*/
+			display:flex;align-items:center;justify-content:center;
+			flex:1;
+		}
+		.wrap li:nth-child(2){flex:2;}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<ul>
+			<li><img src="img/yy_1.jpg" alt=""></li>
+			<li><img src="img/yy_2.png" alt=""></li>
+			<li><img src="img/yy_3.jpg" alt=""></li>
+			<li><img src="img/yy_4.png" alt=""></li>
+			<li><img src="img/yy_5.jpg" alt=""></li>
+			<li><img src="img/yy_6.jpg" alt=""></li>
+			<li><img src="img/yy_7.jpg" alt=""></li>
+		</ul>
+	</div>
+</body>
+</html>

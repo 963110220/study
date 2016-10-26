@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>正方体</title>
+		<style>
+			 .wrap {
+	
+				perspective: 800px;
+				perspective-origin: 50% 100px;
+			}
+			.cube {
+				
+				position: relative;
+				width: 200px;
+				transform-style: preserve-3d;
+			}
+			.cube div {
+				position: absolute;
+				width: 200px;
+				height: 200px;
+			}
+			.back {
+				background: red;
+				transform: translateZ(-100px) rotateY(180deg);
+			}
+			.right {
+				background: pink;
+				transform: rotateY(-270deg) translateX(100px);
+				transform-origin: top right;
+			}
+			.left {
+				background: greenyellow;
+				transform: rotateY(270deg) translateX(-100px);
+				transform-origin: center left;
+			}
+			.top {
+				background: deepskyblue;
+				transform: rotateX(-90deg) translateY(-100px);
+				transform-origin: top center;
+			}
+			.bottom {
+				background: yellow;
+				transform: rotateX(90deg) translateY(100px);
+				transform-origin: bottom center;
+			}
+			.front {
+				background: grey;
+				transform: translateZ(100px);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="cube">
+				<div class="front">前</div>
+				<div class="back">后</div>
+				<div class="top">上</div>
+				<div class="bottom">下</div>
+				<div class="left">左</div>
+				<div class="right">右</div>
+			</div>
+		</div>
+	</body>
+</html>

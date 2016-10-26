@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>html5的全局属性</title>
+	<style>
+		article{
+			width:200px;height:200px;background-color:#f00;
+		}
+	</style>
+</head>
+<body>
+	<!-- 
+		全局属性
+			id,class,title...
+		html5新增全局属性：
+
+	 -->
+	 <h3>contenteditable</h3>
+	 <section contenteditable>
+	 	<h1>contenteditable</h1>
+	 	<p>10月17日7时30分，搭载着神舟十一号载人飞船的长征二号F遥十一运载火箭在酒泉卫星发射中心点火升空</p>
+	 	<button>保存</button>
+	 </section>
+
+	 <h3>draggable</h3>
+	 <article draggable>
+	 	这里的内容能否拖拽
+	 </article>
+
+	 <h3>hidden</h3>
+	 <article hidden>
+	 	隐藏元素内容
+	 </article>
+
+	 <h3>自定义属性data-*</h3>
+	 <div data-guid="3345678">
+	 自定义属性
+	<p>js获取属性：div.getAttribute('data-guid')</p>
+	<p>js获取属性：div.dataset.guid</p>
+	 </div>
+
+	<h3>reversed & start</h3>
+	<ol reversed start="5" type="a">
+		<li>列表数据1</li>
+		<li>列表数据2</li>
+		<li>列表数据3</li>
+		<li>列表数据4</li>
+		<li>列表数据5</li>
+		<li>列表数据6</li>
+		<li>列表数据7</li>
+		<li>列表数据8</li>
+	</ol>
+</body>
+</html>

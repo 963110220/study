@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>秋名山车神</title>
+	<style>
+		.car {width: 240px;}
+
+		@keyframes run {
+			0% { transform: skew(30deg); }
+			90% { transform: translate(800px, 0) skew(-20deg); }
+			100% {transform: translate(800px, 0) skew(0deg);}
+		}
+	</style>
+</head>
+<body>
+	<h1>秋名山车神展示惊人车技</h1>
+	<p>秋名山上行人稀</p>
+	<p>常有车手比高低</p>
+	<p>如今车道依旧在</p>
+	<p>不见当年老司机</p>
+	<button class="btnStart">开始</button>
+	<img src="./img/car.jpg" alt="" class="car">
+	<script>
+		var btnStart = document.querySelector('.btnStart');
+		var car = document.querySelector('.car');
+		btnStart.onclick = function(){
+			car.style.animation = 'run 2s forwards .2s';
+			// car.style.animation = 'run 2s forwards .2s 2 alternate';
+		}
+	</script>
+</body>
+</html>

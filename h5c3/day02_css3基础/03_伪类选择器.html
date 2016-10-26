@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>伪类选择器</title>
+	<style>
+
+		li:not(:first-child){color:#f00;}
+		li:empty{border:1px solid #ddd;}
+
+		section{margin:10px;width:600px;max-height:300px;border:1px solid #ddd;padding:10px;}
+		section:target{
+			border-color:#f60;
+			border-width:5px;
+		}
+
+	</style>
+</head>
+<body>
+	<section>
+		<h1>你喜欢的城市</h1>
+		<ul>
+			<li class="hot"><a href="#gz">广州</a></li>
+			<li><a href="#bj">北京</a></li>
+			<li>上海</li>
+			<li><a href="#hz">杭州</a></li>
+			<li>成都</li>
+			<li class="hot">南宁</li>
+			<li></li>
+		</ul>
+	</section>
+	<section id="gz">
+		<h4>广州概况</h4>
+		<p>广州老婆饼，肠粉~</p>
+	</section>
+	<section id="bj">
+		<h4>北京概况</h4>
+		<p>北京雾霾欢迎你</p>
+	</section>
+	<section id="hz">
+		<h4>杭州概况</h4>
+		<p>杭州欢迎你，这里有马云</p>
+	</section>
+</body>
+</html>

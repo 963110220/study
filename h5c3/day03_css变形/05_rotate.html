@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>rotate旋转效果</title>
+	<style>
+		.box{width:320px;height:320px;}
+		label{display:block;margin-top:20px;}
+	</style>
+	<script>
+		document.addEventListener('DOMContentLoaded',function(){
+			var eBox = document.querySelector('.box');
+			var btn = document.querySelectorAll('input[type=range]');
+			var btnX = document.querySelector('#btnX');
+			var btnY = document.querySelector('#btnY');
+			var btnZ = document.querySelector('#btnZ');
+
+			for(var i=0;i<btn.length;i++){
+				btn[i].oninput = function(){
+					// substring(startIdx,endIdx)
+					var direction = this.id.substr(-1,1);
+					eBox.style.transform = 'rotate'+direction+'('+this.value+'deg)';
+					this.nextElementSibling.innerHTML = this.value;
+			}
+			}
+			
+		})
+	</script>
+</head>
+<body>
+	<div class="box"><img src="img/mm003.jpg" alt=""></div>
+	<label for="btnX">rotateX</label>
+	<input type="range" id="btnX" min="0" max="360" step="10" value="0">
+	<span></span>
+
+	<label for="btnY">rotateY</label>
+	<input type="range" id="btnY" min="0" max="360" step="10" value="0">
+	<span></span>
+
+	<label for="btnZ">rotateZ</label>
+	<input type="range" id="btnZ" min="0" max="360" step="10" value="0">
+	<span></span>
+</body>
+</html>

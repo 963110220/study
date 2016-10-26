@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>渐变</title>
+		<style>
+			.box{
+				width: 200px;
+				height: 200px;
+				border: 1px solid pink;
+				background:-webkit-linear-gradient(left,red,green);
+				}
+			.heh{
+				/*background:-webkit-radial-gradient(circle,#f00,#ff0,#fff);*/
+				background: -webkit-radial-gradient(50% 0,circle closest-corner,#f00,#fff);
+			}	
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+		<div class="box heh"></div>
+	</body>
+</html>

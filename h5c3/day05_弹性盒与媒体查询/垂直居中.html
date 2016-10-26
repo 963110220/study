@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>垂直居中</title>
+		<style>
+			.box{
+				width: 800px;
+				height: 800px;
+				border: 1px solid #ddd;
+				}
+			.box ul{list-style: none;margin: 0;padding: 0;display: flex;flex-wrap: wrap;flex-direction: row-reverse;}
+			.box li{
+					height: 300px;
+					border: 1px solid red;
+					margin: 5px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+			}
+			.box img{
+				width: 160px;
+			}
+			.box li:nth-child(2){
+				flex: 2;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<ul>
+			<li><img src="img/yy_1.jpg" alt=""></li>
+			<li><img src="img/yy_2.png" alt=""></li>
+			<li><img src="img/yy_3.jpg" alt=""></li>
+			<li><img src="img/yy_4.png" alt=""></li>
+			<li><img src="img/yy_5.jpg" alt=""></li>
+			<li><img src="img/yy_6.jpg" alt=""></li>
+			<li><img src="img/yy_7.jpg" alt=""></li>
+		</ul>
+		</div>
+	</body>
+</html>

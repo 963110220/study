@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>视频播放</title>
+</head>
+<body>
+	<!-- 
+		视频格式：
+		1. Ogg => 带有Theora视频编码+Vorbis音频编码的Ogg文件，支持的浏览器:Firefox、Chrome、Opera
+		2. MEPG4 => 带有H.264视频编码+AAC音频编码的MPEG4文件，支持的浏览器: Safari、Chrome
+		3. WebM => 带有VP8视频编码+Vorbis音频编码的WebM格式，支持的浏览器: IE、Firefox、Chrome、Opera
+		视频编码：H.264、Theora、VP8(google开源)
+	 -->
+	<video src="media/七喜广告2_baofeng.mp4" controls>您的浏览器不支持html5,请升级您的浏览器</video>
+
+	<video controls loop poster="img/g009.jpg">
+		<source src="media/3theA.mp4" type="video/mp4">
+		<source src="media/3theA.ogg" type="video/ogg">
+		<source src="media/3theA.webm" type="video/webm">
+		您的浏览器不支持html5,请升级您的浏览器
+	</video>
+</body>
+</html>

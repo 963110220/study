@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			section{
+				margin: 100px auto;
+				position: relative;
+				width: 600px;
+				transform-style: preserve-3d;
+				transform: perspective(800px) rotateX(30deg);
+			}
+			div{
+				text-align: center;
+				line-height: 200px;
+				width: 200px;
+				height: 200px;
+				position: absolute;
+				opacity: 0.5;
+			}
+			div:nth-of-type(1){
+				background: red;
+				transform: translateZ(100px);
+			}
+			div:nth-of-type(2){
+				background: black;
+				transform: translateZ(-100px);
+			}
+			div:nth-of-type(3){
+				background: green;
+				transform: translateX(100px) rotateY(-90deg);
+			}
+			div:nth-of-type(4){
+				background: yellow;
+				transform: translateX(-100px) rotateY(90deg);
+			}
+			div:nth-of-type(5){
+				background: blueviolet;
+				transform: translateY(100px) rotateX(90deg);
+			}
+			div:nth-of-type(6){
+				background: blue;
+				transform: translateY(-100px) rotateX(-90deg);
+			}
+		</style>
+		<script>
+			document.addEventListener("DOMContentLoaded",function(){
+				var Box = document.querySelector("section");
+				var angelX = 30;
+				var angelY = 0;
+				document.onmousedown=function(e){
+					var startX = e.clientX;
+					var startY = e.clientY;
+					e.preventDefault();
+					document.onmousemove=function(e){
+						var endX = e.clientX;
+						var endY =e.clientY;
+						angelX -= (endY-startY)*0.2;
+						angelY += (endX-startX)*0.2;
+						Box.style.transform="perspective(800px) rotateX("+angelX+"deg) rotateY("+angelY+"deg)";
+						e.preventDefault();
+						console.log(angelX,angelY);
+						startX = endX;
+						startY = endY;
+					}
+					document.onmouseup=function(){
+						document.onmousemove=null;
+					}
+				}
+			})
+		</script>
+	</head>
+	<body>
+		<section>
+			<div>前</div>
+			<div>后</div>
+			<div>上</div>
+			<div>下</div>
+			<div>左</div>
+			<div>右</div>
+		</section>
+	</body>
+</html>

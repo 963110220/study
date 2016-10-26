@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>太极八卦的前世今生</title>
+	<style>
+		.taiji{
+			position:relative;
+			width:300px;height:300px;box-sizing:border-box;
+			border:10px solid #f00;border-bottom-width:150px;border-radius:50%;
+		}
+		.taiji::before,.taiji::after{
+			content:'';
+			position:absolute;top:50%;left:0;
+			box-sizing:border-box;width:140px;height:140px;background-color:#000;border-radius:50%;
+			border:50px solid #f00;background-color:#fff;
+		}
+		.taiji::after{
+			left:auto;
+			right:0;
+			border-color:#fff;background-color:#f00;
+		}
+	</style>
+</head>
+<body>
+	<div class="taiji">
+	</div>
+</body>
+</html>

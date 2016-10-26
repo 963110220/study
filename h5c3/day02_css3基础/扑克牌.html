@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>扑克牌</title>
+		<style>
+		 	.yy{
+		 		width: 360px;
+		 		height: 500px;
+		 		position: relative;
+		 		margin: 100px auto;
+		 	}
+		 	.yy img{
+		 		transition: 1s;
+		 		position: absolute;
+		 		width: 360px;
+		 		height: 500px;
+		 		border: 5px solid red;
+		 		box-sizing: border-box;
+		 		-moz-transform-origin: center bottom;
+		 	}
+		 	.yy:hover img:nth-of-type(1){
+		 		-moz-transform:rotate(-60deg);
+		 	}
+		 	.yy:hover img:nth-of-type(2){
+		 		-moz-transform:rotate(-40deg);
+		 	}
+		 	.yy:hover img:nth-of-type(3){
+		 		-moz-transform:rotate(-20deg);
+		 	}
+		 	.yy:hover img:nth-of-type(5){
+		 		-moz-transform:rotate(20deg);
+		 	}
+		 	.yy:hover img:nth-of-type(6){
+		 		-moz-transform:rotate(40deg);
+		 	}
+		 	.yy:hover img:nth-of-type(7){
+		 		-moz-transform:rotate(60deg);
+		 	}
+		</style>
+	</head>
+	<body>
+ 		<div class="yy">
+ 			<img src="img/yy_1.jpg" />
+ 			<img src="img/yy_2.png" />
+ 			<img src="img/yy_3.jpg" />
+ 			<img src="img/yy_4.png" />
+ 			<img src="img/yy_5.jpg" />
+ 			<img src="img/yy_6.jpg" />
+ 			<img src="img/yy_7.jpg" />
+ 		</div>
+	</body>
+</html>

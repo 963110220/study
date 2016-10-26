@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03_删除画布上的内容</title>
+	<style>
+		canvas{border:1px solid #ddd;}
+	</style>
+	<script>
+		document.addEventListener('DOMContentLoaded',function(){
+			var canvas = document.querySelector('canvas');
+			canvas.width = 600;
+			canvas.height = 600;
+
+			var ctx = canvas.getContext('2d');
+
+			
+			var x = 50;
+			var y = 50;
+			var timer = setInterval(function(){
+
+				// 实现动画的关键
+				ctx.clearRect(0,0,canvas.width,canvas.height);
+				ctx.beginPath();
+				
+				ctx.arc(x,y,20,0,2*Math.PI,true);
+				ctx.fillStyle = '#f00';
+				ctx.fill();
+
+				x += 5;
+			},100);
+		})
+	</script>
+</head>
+<body>
+	<canvas>你的浏览器不支持canvas标签，请升级你的浏览你</canvas>
+</body>
+</html>

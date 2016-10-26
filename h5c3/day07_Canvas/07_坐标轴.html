@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>07_坐标轴</title>
+	<style>
+		canvas{border:1px solid #ddd;}
+	</style>
+	<script>
+		document.addEventListener('DOMContentLoaded',function(){
+			var canvas = document.querySelector('canvas');
+			canvas.width = canvas.height = 600;
+
+			var ctx = canvas.getContext('2d');
+			
+			var gap = 20;
+
+			// 水平
+			for(var i=0,len=canvas.height/gap;i<len;i++){
+				ctx.moveTo(0,gap*i);
+				ctx.lineTo(canvas.width,gap*i);
+			}
+
+			// 垂直
+			for(var i=0,len=canvas.width/gap;i<len;i++){
+				ctx.moveTo(gap*i,0);
+				ctx.lineTo(gap*i,canvas.height);
+			}
+			ctx.lineWidth = 1;
+			ctx.strokeStyle = '#ddd';
+			ctx.stroke();
+
+			// 画坐标轴
+			ctx.beginPath();
+			ctx.strokeStyle = '#00f';
+			ctx.lineWidth = 5;
+
+			ctx.moveTo(50,500);
+			ctx.lineTo(50,100);
+
+			var arrowSize = 20
+			var w = Math.sin(30*Math.PI/180)*arrowSize;
+			var h = Math.cos(30*Math.PI/180)*arrowSize;
+			ctx.lineTo(50-w,100+h);
+			ctx.moveTo(50,100);
+			ctx.lineTo(50+w,100+h);
+
+			ctx.moveTo(50,500);
+			ctx.lineTo(450,500);
+			ctx.lineTo(450-h,500-w);
+			ctx.moveTo(450,500);
+			ctx.lineTo(450-h,500+w);
+
+			ctx.stroke();
+		})
+	</script>
+</head>
+<body>
+	<canvas>你的浏览器不支持canvas标签，请升级你的浏览你</canvas>
+</body>
+</html>

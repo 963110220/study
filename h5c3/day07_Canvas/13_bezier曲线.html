@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>13_bezier曲线</title>
+	<script>
+		document.addEventListener('DOMContentLoaded',function(){
+			var canvas = document.querySelector('canvas');
+			canvas.width = canvas.height = 600;
+			canvas.style.border = '1px solid #ddd';
+
+			var ctx = canvas.getContext('2d');
+
+
+			ctx.moveTo(100,100);
+			ctx.quadraticCurveTo(80,200,200,100);
+			// ctx.moveTo(200,100);
+			ctx.quadraticCurveTo(280,20,300,50);
+
+			ctx.stroke();
+		});
+	</script>
+</head>
+<body>
+	<canvas>您的浏览器不支持canvas画布</canvas>
+</body>
+</html>

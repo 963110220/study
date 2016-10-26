@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03_删除画布上的内容</title>
+	<style>
+		canvas{border:1px solid #ddd;}
+	</style>
+	<script>
+		document.addEventListener('DOMContentLoaded',function(){
+			var canvas = document.querySelector('canvas');
+			canvas.width = 600;
+			canvas.height = 600;
+
+			var ctx = canvas.getContext('2d');
+			console.log(ctx);
+
+			// 生成一个img节点
+			var img = new Image();
+			img.src = 'img/timg.jpeg';
+
+			// 注意：必须等图片加载完成后才能进行写入操作
+			img.onload = function(){
+
+				// 等比例公式：height = width*imgHeight/imgWidth
+				ctx.drawImage(img,0,0,300,300*img.height/img.width);
+				ctx.drawImage(img,420,630,265,270,320,100,50,50*265/270);
+			}
+
+
+
+		})
+	</script>
+</head>
+<body>
+	<canvas>你的浏览器不支持canvas标签，请升级你的浏览你</canvas>
+</body>
+</html>

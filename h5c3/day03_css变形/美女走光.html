@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width: 200px;
+				overflow: hidden;
+				height: 300px;
+				border: 1px solid red;
+				position: relative;
+			}
+			#box img{
+				opacity: 0;
+				transition: all 1s;
+				position: absolute;
+				width: 200px;
+				height: 300px;
+				left: -200px;
+				box-sizing: border-box;
+				padding: 5px;
+			}
+			a{display: inline-block;margin-left: 5px;}
+			a:hover{
+				background: red;
+			}
+			#box img:target{
+				left: 0;opacity: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<img src="img/yy_1.jpg" id="mm1"/>
+			<img src="img/yy_2.png" id="mm2"/>
+			<img src="img/yy_3.jpg" id="mm3"/>
+			<img src="img/yy_4.png" id="mm4"/>
+		</div>
+		 <div class="list">
+		 	<a href="#mm1">美女1</a>
+		 	<a href="#mm2">美女2</a>
+		 	<a href="#mm3">美女3</a>
+		 	<a href="#mm4">美女4</a>
+		 </div>
+	</body>
+</html>

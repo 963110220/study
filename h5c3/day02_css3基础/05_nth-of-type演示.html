@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>nth-of-type</title>
+	<style>
+		/* section :nth-child(2){
+			color:#f00;
+		} 
+		section p:nth-child(1){
+			color:#f00;
+		}*/
+
+		/*每种类型的第一个元素*/
+		section :nth-of-type(2n){
+			color:#f00;
+		}
+
+		section :nth-last-of-type(2n){
+			color:#f00;
+		}
+
+		/*:only-child{background-color:#f00;};*/
+	</style>
+</head>
+<body>
+	<section>
+		<h1>nth新玩法</h1>
+		<p>美国队长3</p>
+		<p>蝙蝠侠大战超人</p>
+		<h2>蜘蛛侠大战钢铁侠</h2>
+		<h2>神奇四侠</h2>
+		<p>煎饼侠</p>
+		<h2>绿灯侠</h2>
+		<p>猪猪侠</p>
+	</section>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变形效果</title>
+    <style>
+    body{padding:200px;}
+    .box{
+        width:200px;height:80px;background-color:#f00;position:absolute;top:200px;left:200px;
+    }
+    .rotate{
+        transform:rotate(30deg);
+        transform-origin:0 0;
+    }
+    .rotate2{
+        transform:rotate(45deg);
+        transform-origin:0 0;
+        background-color: #0f0;
+    }
+    .rotate3{
+        transform:rotate(60deg);
+        transform-origin:0 0;
+        background-color: #00f;
+    }
+    </style>
+</head>
+<body>
+    <div class="box rotate"></div>
+    <div class="box rotate2"></div>
+    <div class="box rotate3"></div>
+</body>
+</html>

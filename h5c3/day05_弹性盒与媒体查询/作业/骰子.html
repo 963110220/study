@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>骰子</title>
+	<style>
+		body{padding:200px;}
+		.dice{position:relative;width:204px;height:204px;transform-style:preserve-3d;}
+		.dice > div{position:absolute;top:0;left:0;display:flex;width:200px;height:200px;border:2px solid #ddd;flex-wrap:wrap;background-color:#fff;border-radius:40px;backface-visibility:hidden;}
+		.dice span{width:35px;height:35px;border-radius: 50%;background-color:#00f;}
+
+		.dice > div:nth-child(1){justify-content:center;align-items:center;transform:translateZ(100px);}
+		.dice > div:nth-child(1) span{width:70px;height:70px;background-color:#f00;}
+
+		.dice > div:nth-child(2){/* flex-direction:column; */justify-content:center;align-items:center;align-content:space-around;transform:rotateY(90deg) translateZ(100px);}
+		.dice > div:nth-child(2) span{margin:0 50px;width:50px;height:50px;}
+
+		.dice > div:nth-child(3){flex-direction:column;justify-content:center;align-items:center;transform:rotateY(-90deg) translateZ(100px);}
+		.dice > div:nth-child(3) span{margin:10px 30px;}
+		.dice > div:nth-child(3) span:first-child{align-self:flex-start;}
+		.dice > div:nth-child(3) span:last-child{align-self:flex-end;}
+
+		.dice > div:nth-child(4){align-content:space-around;transform:rotateX(-90deg) translateZ(100px);}
+		.dice > div:nth-child(4) span{margin:0 30px;background-color:#f00;}
+
+		.dice > div:nth-child(5){align-content:space-around;justify-content:center;transform:rotateX(90deg) translateZ(100px);}
+		.dice > div:nth-child(5) span{margin:0 30px;}
+		.dice > div:nth-child(5) span:nth-child(3){margin:0 60px;}
+
+		.dice > div:nth-child(6){align-content:space-around;justify-content:center;transform:rotateY(180deg) translateZ(100px);}
+		.dice > div:nth-child(6) span{margin:0 30px;}
+	</style>
+	<script>
+		document.addEventListener('DOMContentLoaded',function () {
+            var eBox = document.querySelector('.dice');
+
+            // 拖拽效果
+			var angleX = -30;
+			var angleY = 30;
+			document.onmousedown = function(e){
+				var startX = e.clientX;
+				var startY = e.clientY;
+				document.onmousemove = function(evt){
+					var endX = evt.clientX;
+					var endY = evt.clientY;
+					angleX -= (endY - startY)*0.2;
+					angleY += (endX - startX)*0.1;
+					eBox.style.transform = 'perspective(1600px) rotateX('+angleX+'deg)  rotateY('+angleY+'deg)';
+					startX = endX;
+					startY = endY;
+
+					evt.preventDefault();
+				}
+			}
+			document.onmouseup = function(){
+				document.onmousemove = null;
+			}
+                
+        });
+	</script>
+</head>
+<body>
+	<div class="dice">
+		<div>
+			<span></span>
+		</div>
+		<div>
+			<span></span>
+			<span></span>
+		</div>
+		<div>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<div>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<div>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<div>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+</body>
+</html>

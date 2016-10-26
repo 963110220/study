@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>单词记事本</title>
+	<style>
+		textarea{width:400px;height:60px;}
+		.res time{color:#999;font-size:12px;}
+		.active h5{color:#f60;}
+	</style>
+	<script>
+		/* 
+			所有知识点：
+				1）localStorage
+					setItem()
+					removeItem()
+				2）遍历
+				3）逐个显示单词
+		*/
+	document.addEventListener('DOMContentLoaded',function(){
+		var btnPrev = document.querySelector('.btnPrev');
+		var btnNext = document.querySelector('.btnNext');
+		var btnShowAll = document.querySelector('.btnShowAll');
+		var btnSave = document.querySelector('.btnSave');
+		var btnDel = document.querySelector('.btnDel');
+
+		var eEn = document.querySelector('#en');
+		var eCn = document.querySelector('#cn');
+		var eRes = document.querySelector('.res');
+
+		var wordList = localStorage.getItem('wordList');
+		wordList = wordList ? JSON.parse(wordList) : [];
+
+		// 当前显示单词的索引值
+		var index = 0;
+
+		// 进入页面是显示第一个单词
+		show();
+
+		// 点击保存
+		btnSave.onclick = function(){
+			var obj = {};
+			obj.en = eEn.value;
+			obj.cn = eCn.value;
+			obj.time = new Date();
+
+			// 把当前单词写入数组
+			wordList.unshift(obj);
+
+			// 保存到本地存储
+			localStorage.setItem('wordList',JSON.stringify(wordList));
+			show(btnShowAll.show);
+		}
+
+		// 删除: 删除当前单词
+		btnDel.onclick = function(){
+			wordList.splice(index,1);
+			localStorage.setItem('wordList',JSON.stringify(wordList));
+			show(btnShowAll.show);
+		}
+
+		// 显示上一个/下一个
+		btnPrev.onclick = function(){
+			index--;
+
+			// 把当前单词显示再输入框
+			show(btnShowAll.show);
+		}
+		btnNext.onclick = function(){
+			index++;
+
+			// 把当前单词显示再输入框
+			show(btnShowAll.show);
+		}
+
+		// 2）遍历：显示所有单词
+		btnShowAll.onclick = function(){
+			show(true);
+			this.show = !this.show;
+			this.innerHTML = this.show ? '隐藏所有' : '显示所有';
+			eRes.style.display = this.show ? 'block' : 'none';
+		}
+
+
+		function show(all){
+			// 超出索引值的处理方式
+			if(index < 0){
+				index = 0;
+			}else if(index > wordList.length - 1){
+				index = wordList.length - 1;
+			}
+
+			// 改变变按钮的状态
+			btnPrev.disabled = index==0;
+			btnNext.disabled = index==wordList.length - 1;
+
+			// 把当前单词显示再输入框
+			eEn.value = wordList[index].en;
+			eCn.value = wordList[index].cn;
+
+			if(all){
+				var ul = document.createElement('ul');
+				wordList.forEach(function(item,idx){
+					var li = document.createElement('li');
+
+					// 高亮显示当前
+					if(index === idx){
+						li.classList.add('active');
+					}
+
+
+					li.innerHTML = '<h5>英文：'+item.en + '</h5><p>翻译：' + item.cn + '</p><time>添加时间：' + item.time + '</time>';
+					ul.appendChild(li);
+				});
+
+				// 先清空.res中的内容，再写入新内容
+				eRes.innerHTML = '';
+				eRes.appendChild(ul);
+			}
+			
+		}
+	});
+	</script>
+</head>
+<body>
+	<h1>英语单词记事本</h1>
+	<div class="notepad">
+		<header>
+			回顾：<button class="btnPrev">上一个</button><button class="btnNext">下一个</button><button class="btnShowAll">显示所有</button>
+		</header>
+		<div class="content">
+			<h4>单词：</h4>
+			<textarea id="en"></textarea>
+			<h4>中文：</h4>
+			<textarea id="cn"></textarea>
+			<p><button class="btnSave">保存</button><button class="btnDel">删除</button></p>
+		</div>
+		<div class="res"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>按钮</title>
+		<style>
+			.btn{
+			display: inline-block;	width: 200px;height: 100px;line-height: 100px;background: url(img/btn_bg.png) no-repeat;text-align: center;
+			}
+			.btn:nth-of-type(1){
+			
+				width: 100px;
+				height: 50px;
+				line-height:50px;
+				background-size: 100% 100%;
+				/*border-image: url(img/btn_bg.png) 18 18 33 18 fill/18px 18px 33px 18px ;*/
+			}
+			.btn:nth-of-type(2){
+				width: 200px;
+				height: 200px;
+				background-size: 100% 100%;
+				line-height: 200px;		
+			}
+			.btn:nth-of-type(3){
+				background: none;
+				width: 1000px;height: 300px;
+				line-height:300px;
+				border-image:url(img/btn_bg.png) 18 18 33 18 fill/18px 18px 33px 18px;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<span class="btn">高大上按钮</span>
+		<span class="btn">高大上按钮</span>
+		<br />
+		<span class="btn">高大上按钮</span>
+	</body>
+</html>

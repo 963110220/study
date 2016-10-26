@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>05_跑步机</title>
+	<style>
+		.pbj{width:180px;height:300px;background:url(img/charector.png) no-repeat;animation:runing 3s step-start infinite;}
+
+		/*定义动画*/
+		@keyframes runing{
+			0%{background-position:0 0;}
+			14.2%{background-position:-180px 0;}
+			28.4%{background-position:-360px 0;}
+			42.6%{background-position:-540px 0;}
+			56.8%{background-position:-720px 0;}
+			71%{background-position:-900px 0;}
+			85.2%{background-position:-1080px 0;}
+			100%{background-position:0 0;}
+		}
+	</style>
+	<script>
+		document.addEventListener('DOMContentLoaded',function(){
+			var ePbj = document.querySelector('.pbj');
+			var btn = document.querySelectorAll('button');
+
+			var duration = {
+				fastest:0.2,
+				fast:0.5,
+				normal:0.8,
+				slow:1.2,
+				slowest:1.8
+			}
+			for(var i=0;i<btn.length;i++){
+				btn[i].onclick = function(){
+					ePbj.style.animationDuration = duration[this.className] + 's';
+				}
+			}
+		});
+	</script>
+</head>
+<body>
+	<h1>跑步机效果</h1>
+	<div class="pbj"></div>
+	<button class="fastest">超快</button>
+	<button class="fast">快</button>
+	<button class="normal">正常</button>
+	<button class="slow">慢</button>
+	<button class="slowest">超慢</button>
+</body>
+</html>

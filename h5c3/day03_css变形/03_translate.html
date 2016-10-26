@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>translate</title>
+	<style>
+		.box{width:200px;height:100px;background-color: #f00;}
+		label{display:block;margin-top:20px;}
+	</style>
+	<script>
+		document.addEventListener('DOMContentLoaded',function(){
+			var eBox = document.querySelector('.box');
+			var btnX = document.querySelector('#btnX');
+			var btnY = document.querySelector('#btnY');
+			var btnZ = document.querySelector('#btnZ');
+
+			btnX.oninput = function(){
+				eBox.style.transform = 'translateX('+this.value+'px)'
+			}
+
+			btnY.oninput = function(){
+				eBox.style.transform = 'translateY('+this.value+'px)'
+			}
+
+			btnZ.oninput = function(){
+				eBox.style.transform = 'perspective(99px) translateZ('+this.value+'px)'
+			}
+
+		})
+	</script>
+</head>
+<body>
+	<div class="box"></div>
+	<label for="btnX">translateX</label>
+	<input type="range" id="btnX" min="0" max="100" step="1" value="0">
+
+	<label for="btnY">translateY</label>
+	<input type="range" id="btnY" min="0" max="100" step="1" value="0">
+
+	<label for="btnZ">translateZ</label>
+	<input type="range" id="btnZ" min="0" max="100" step="1" value="0">
+</body>
+</html>

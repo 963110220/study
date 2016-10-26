@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>13_边框背景按钮</title>
+    <style>
+        .btn{
+            display:inline-block;width:224px;height:84px;background:url(img/btn_bg.png) no-repeat;text-align:center;line-height:61px;
+        }
+        .btn:nth-child(2){
+            width:100px;height:100px;line-height:100px;background-size:100% 100%;
+        }
+
+        .btn:nth-of-type(3){background:none;
+            width:1000px;height:300px;line-height:30px;
+            border-image:url(img/btn_bg.png) 18 18 33 18 fill/18px 18px 33px 18px;
+            box-shadow:10px 10px 10px rgba(0,0,0,.5)
+        }
+    </style>
+</head>
+<body>
+    <span class="btn">非高大上按钮</span>
+    <span class="btn">非高大上按钮</span>
+    <br/><br/>
+    <span class="btn">高大上按钮</span>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>nth-child演示效果</title>
+	<style>
+		ul{padding:0;margin:0;list-style: none;}
+		.demo{padding:20px;height:40px;}
+		.demo li{float:left;margin:0 5px;width:40px;height:40px;line-height:40px;background:#666;border-radius:50%;text-align:center;color:#fff;}
+		.demo1 li:nth-child(2),
+		.demo4 li:nth-child(2n),
+		.demo5 li:nth-child(2n-1),
+		.demo2 li:nth-child(n+4),
+		.demo3 li:nth-child(-n+4),
+		.demo6 li:nth-child(3n+1),
+		.demo7 li:last-child,
+		.demo8 li:nth-last-child(3n){background:#f60;}
+	</style>
+</head>
+<body>
+	<h4>案例1：nth-child(2)</h4>
+	<ul class="demo demo1">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+	</ul>
+	<h4>案例2：nth-child(n+4)</h4>
+	<ul class="demo demo2">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+	</ul>
+	<h4>案例3：nth-child(-n+4)</h4>
+	<ul class="demo demo3">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+	</ul>
+	<h4>案例4：nth-child(2n)</h4>
+	<ul class="demo demo4">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+	</ul>
+	<h4>案例5：nth-child(2n-1)</h4>
+	<ul class="demo demo5">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+	</ul>
+	<h4>案例6：nth-child(3n+1)</h4>
+	<ul class="demo demo6">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+	</ul>
+	<h4>案例7：last-child</h4>
+	<ul class="demo demo7">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+	</ul>
+	<h4>案例8：nth-last-child(3)</h4>
+	<ul class="demo demo8">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+	</ul>
+</body>
+</html>

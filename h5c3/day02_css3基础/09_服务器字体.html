@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>服务器字体</title>
+	<style>
+		section{
+			font-family:'微软雅黑';
+		}
+
+		/*先定义一个字体*/
+		/*@font-face{
+			font-family:'bige';
+			src:url('font/锐字逼格锐线体简4.0.ttf');
+		}*/
+
+		/*完整格式*/
+		@font-face{
+	        font-family: 'bige';
+	        src: url('font/ruizibige.eot'); /* IE9 兼容模式 */
+	        src: url('font/ruizibige.eot?#iefix') format('embedded-opentype'), /*IE6-IE8 */
+	            url('font/ruizibige.woff') format('woff'), /*标准浏览器*/
+	            url('font/ruizibige.ttf')  format('truetype'), /*Safari, Android, iOS*/
+	            url('font/ruizibige.svg#ruizibige') format('svg'); /*Legacy iOS*/
+	    }
+	    /* 
+		//定义加粗字体
+	    @font-face{
+	    	font-family: 'bige';font-weight:bold;
+	        src: url('font/ruizibige_bold.eot'); IE9 兼容模式
+	        src: url('font/ruizibige_bold.eot?#iefix') format('embedded-opentype'), IE6-IE8
+	            url('font/ruizibige_bold.woff') format('woff'), 标准浏览器
+	            url('font/ruizibige_bold.ttf')  format('truetype'), Safari, Android, iOS
+	            url('font/ruizibige_bold.svg#ruizibige') format('svg'); Legacy iOS
+	    } */
+
+		/*使用服务器字体*/
+		section:nth-child(2){
+			font-family:'bige';font-size:40px;font-weight:bold;
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<h1>本地字体</h1>
+		<p>这是一个有情怀的字体</p>
+	</section>
+
+	<section>
+		<h1>服务器字体</h1>
+		<p>这是一个逼格的字体</p>
+	</section>
+</body>
+</html>
